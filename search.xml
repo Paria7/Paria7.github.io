@@ -17,6 +17,29 @@
     
     
     <entry>
+      <title>Chapter1</title>
+      <link href="/2021/10/02/Books/English/Animal%20Farm/Chapter1/"/>
+      <url>/2021/10/02/Books/English/Animal%20Farm/Chapter1/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Book </tag>
+            
+            <tag> English </tag>
+            
+            <tag> Animal Farm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
       <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/"/>
       <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/</url>
@@ -55,29 +78,6 @@
             <tag> English </tag>
             
             <tag> The Little Prince </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Chapter1</title>
-      <link href="/2021/10/02/Books/English/Animal%20Farm/Chapter1/"/>
-      <url>/2021/10/02/Books/English/Animal%20Farm/Chapter1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Book </tag>
-            
-            <tag> English </tag>
-            
-            <tag> Animal Farm </tag>
             
         </tags>
       
@@ -281,6 +281,48 @@
         <tags>
             
             <tag> Node-RED </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Angular8 实战（一）为什么选择Angular？</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/</url>
+      
+        <content type="html"><![CDATA[<h2 id="为什么要学习Angular？"><a href="#为什么要学习Angular？" class="headerlink" title="为什么要学习Angular？"></a>为什么要学习Angular？</h2><p>前端技术各有千秋，为什么要选择Angular呢？下面我们从几个方面来的比较一下。</p><h2 id="框架层面"><a href="#框架层面" class="headerlink" title="框架层面"></a>框架层面</h2><ol><li><p>和Vue、React相比，Angular其实更称得上是一个框架，因为后两者更多意义上倾向于视图这样层面的比较轻量级的类库。但是Angular，它是一个一站式的前端开发框架。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/1.png" alt="image.png"></p></li><li><p>它从模块、服务、组件、路由、表单、响应式开发等都给你提供好，是一个开箱即用的框架。也就是说它并不需要依赖很多第三方的开源类库，也不需要去比较这些开源类库中的优缺点，因为官方内置已经给你提供了这些功能。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/2.png" alt="image.png"><br>####语言层面<br>很多前端框架像Vue，React都在用Typescript，Angular是所有主流前端开发框架中最早拥抱<a href="https://www.typescriptlang.org/">Typescript</a>。它采用Typescript作为开发语言，提供了大型项目所必须的这种类型约束。从目前来看，虽然React和Vue也支持了Typescript，但是从集成程度来看，Angular是这些框架中对Typescript最友好的，也是最方便的。目前，Typescript已经成为未来前端框架的标配。所以，最早拥抱Typescript的Angular，在这一方面有很大的优势。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/3.png" alt="image.png"></p></li></ol><h2 id="项目层面"><a href="#项目层面" class="headerlink" title="项目层面"></a>项目层面</h2><p>从项目层面上来说，大型项目需要处理非常复杂的逻辑，而这些逻辑中大部分是一些异步操作，而Angular深度的集成了Rxjs，用Rxjs来支持对逻辑和异步响应式编程，这种响应式的编程使得逻辑和异步的处理非常自然、简单。另外，大型项目中需要复杂的表单，对于表单中字段的约束和验证，通常意义上来说也是复杂的。但是Angular提供了非常好的机制来验证约束表单。还有，大型的项目都需要很好的文件结构和编码规范，这些Angualr从框架层面上也都全部提供了。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/4.png" alt="image.png"></p><h2 id="生态层面"><a href="#生态层面" class="headerlink" title="生态层面"></a>生态层面</h2><p>在生态层面上，Google和微软都是站在Angular背后的，支持Angular框架。Google很好理解，Angular本身就是Google开发的。而微软呢，提供了Anuglar底层的两大基础设施：Tyepscript，Rxjs。有Google和微软两大巨头站在背后，Angular的生态还是非常稳固的。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/5.png" alt="image.png"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Angular8 实战集</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-0-Overview/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-0-Overview/</url>
+      
+        <content type="html"><![CDATA[<p>本实战集主要是通过高仿拼多多WebApp带你在实战环境中学习Angular8<br>以模块化开发方式，实现一个个小模块，再串成完整项目，让你看到项目由小及大的整个成型过程，并进行Http联调。</p><h2 id="目录列表"><a href="#目录列表" class="headerlink" title="目录列表"></a>目录列表</h2><ul><li>Angular8 实战（一）为什么选择Angular？</li><li>Angular8 实战（二）Angular基础框架</li><li>Angular8 实战（三）环境搭建</li><li>Angular8 实战（四）开发工具配置</li><li>Angular8 实战（五）CLI 工程结构</li><li>Angular8 实战（六）工程源码文件结构</li><li>Angular8 实战（七）【初识组件】顶部TabBar</li><li>Angular8 实战（八）【接口Interface Flex布局】让顶部导航滚动</li><li>Angular8 实战（九）【ngFor指令 事件的处理和样式绑定】顶部导航支持选中状态</li><li>Angular8 实战（十）【组件封装】分离封装第一个组件</li><li>Angular8 实战（十一）【ngIf 指令 组件的输入输出】组件的输入和输出属性</li><li>Angular8 实战（十二）样式绑定的几种方式</li><li>Angular8 实战（十三）组件生命周期（1）</li><li>Angular8 实战（十四）组件生命周期（2）</li><li>Angular8 实战（十五）在组件类中引用模板</li><li>Angular8 实战（十六）在模板中引用多个元素</li><li>Angular8 实战（十七）轮播图组件</li><li>Angular8 实战（十八）组件的双向绑定</li><li>Angular8 实战（十九）模块的概念</li><li>Angular8 实战（二十）模块的划分</li><li>Angular8 实战（二十一）什么是注解</li><li>Angular8 实战（二十二）指令的概念（1）</li><li>Angular8 实战（二十三）指令的概念（2）</li><li>Angular8 实战（二十四）组件的事件绑定和样式绑定</li><li>Angular8 实战（二十五）组件的嵌套和投影组件（1）</li><li>Angular8 实战（二十六）组件的嵌套和投影组件（2）</li><li>Angular8 实战（二十七）路由概念</li><li>Angular8 实战（二十八）路由实战</li><li>Angular8 实战（二十九）路由URL和参数（1）</li><li>Angular8 实战（三十）路由URL和参数（2）</li><li>Angular8 实战（三十一）路由URL和参数（3）</li><li>Angular8 实战（三十二）管道讲解</li><li>Angular8 实战（三十三）依赖注入（1）</li><li>Angular8 实战（三十四）依赖注入（2）</li><li>Angular8 实战（三十五）脏值检测（1）</li><li>Angular8 实战（三十六）脏值检测（2）</li><li>Angular8 实战（三十七）脏值检测（3）</li><li>Angular8 实战（三十八）HTTP概览</li><li>Angular8 实战（三十九）Postman和Rest Client调式HTTP</li><li>Angular8 实战（四十）Rest API</li><li>Angular8 实战（四十一）HttpClient修改</li><li>Angular8 实战（四十二）Http拦截器 HttpInterceptor</li><li>Angular8 实战（四十三）Rxjs初步了解</li><li>Angular8 实战（四十四）操作符和Async管道</li><li>Angular8 实战（四十五）使用Rxjs打造倒计时组件</li><li>Angular8 实战（四十六）创建底部TabBar（1）</li><li>Angular8 实战（四十七）创建底部TabBar（2）</li><li>Angular8 实战（四十八）底部TabBar切换路由</li><li>Angular8 实战（四十九）使用Rxjs高阶操作符添加广告位</li><li>Angular8 实战（五十）创建垂直网络组件</li><li>Angular8 实战（五十一）创建产品卡片组件（1）</li><li>Angular8 实战（五十二）创建产品卡片组件（2）</li><li>Angular8 实战（五十三）实战产品瓷砖组件</li><li>Angular8 实战（五十四）实战后退按钮组件</li><li>Angular8 实战（五十五）实现商品画廊（1）</li><li>Angular8 实战（五十六）实现商品画廊（2）</li><li>Angular8 实战（五十七）实战拼单列表</li><li>Angular8 实战（五十八）实战对话框（1）</li><li>Angular8 实战（五十九）实战对话框（2）</li><li>Angular8 实战（六十）实战对话框（3）</li><li>Angular8 实战（六十一）实战拼单选择产品对话框（1）</li><li>Angular8 实战（六十二）实战拼单选择产品对话框（2）</li><li>Angular8 实战（六十三）实战确认订单（1）</li><li>Angular8 实战（六十四）实战确认订单（2）</li><li>Angular8 实战（六十五）实战个人信息</li><li>Angular8 实战（六十六）发布上线-环境，重定向</li><li>Angular8 实战（六十七）发布上线-gzip和跨域</li><li>Angular8 实战（六十八）路由懒加载的改造</li><li>Angular8 实战（六十九）Ivy渲染引擎</li><li>Angular8 实战（七十）课程总结</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
             
         </tags>
       
