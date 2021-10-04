@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tag: Node-RED, Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（七）【初识组件】顶部TabBar, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tag: Node-RED | Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（七）【初识组件】顶部TabBar | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,471 +311,704 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                I am who I am and I have the need to be.
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Angular8 实战（七）【初识组件】顶部TabBar</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
+                            </a>
+                        
+                            <a href="/tags/Angular8/">
+                                <span class="chip bg-color">Angular8</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-04-29
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    1.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    5 Min
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本章主要讲解组件的基础概念及应用。</p>
+<h2 id="什么是组件？"><a href="#什么是组件？" class="headerlink" title="什么是组件？"></a>什么是组件？</h2><p>组件由模板、样式、类、元数据组成。如下图，每一个组成部分都有各自的主要职责。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/1.png" alt="image.png"><br>下面我们以上一章中创建的根组件来详细讲解一下组件的构成。<br>首先，我们用<code>ng serve -o</code>把angualr项目运行起来，看默认情况下的页面。<br><em>(图片是由视频转换而来，有点差，将就看)</em></p>
+<p><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/2.gif" alt="1.gif"></p>
+<h2 id="通过根组件app-component讲解来认识组件"><a href="#通过根组件app-component讲解来认识组件" class="headerlink" title="通过根组件app.component讲解来认识组件"></a>通过根组件app.component讲解来认识组件</h2><ol>
+<li><p>一个完整的组件一般由四个文件组成：</p>
+<ul>
+<li>app.component.html</li>
+<li>app.component.css</li>
+<li>app.component.ts</li>
+<li>app.component.spec.ts   //凡是带spec的都是测试文件</li>
+</ul>
+</li>
+<li><p>app.component.ts</p>
+<ol>
+<li>引入Angular公共模块，服务，组件等</li>
+<li>@Component 称为组件元数据装饰器，简称装饰器，用来告知Angular框架如何处理一个typescript类。Component装饰器包含多个属性，这些属性的值叫元数据，angualr会根据这些属性的值来渲染组件并执行组件的逻辑</li>
+<li>selector 选择器，上一篇中我们讲angular.json时讲到prefix，就是这里的app。改了prefix，在之后创建组件时，选择器中的前缀也会跟着改变。选择器的作用是：当其它页面想嵌入此页面时，可通过<app-root></app-root>标签来调用，并展示组件的内容。</li>
+<li>templateUrl 模板，通过组件自带的模板（app.component.html）来定义组件的外观，模板是以HTML的形式存在，告诉Angular应该如何来渲染组件。同样，我们也可以在模板中使用angular的数据绑定语法来呈现控制器中的数据。</li>
+<li>styleUrls css样式文件（app.component.css），组件可以关联一些样式表文件来更好的渲染组件的模板文件</li>
+<li>定义了组件的控制器，控制器是指被@Component装饰器装饰的typescript类，它包含模板相关的所有属性和方法，与页面相关的大部分逻辑都编写在这个控制器中。控制器通过数据绑定与模板通讯，模板展现控制器的数据，控制器处理模板上发生的事件。AppComponent就是一个标准的typescript类，类里面没有框架的痕迹，就是用装饰器将元数据附加到AppComponent类上。</li>
+<li>title AppComponent类中定义的属性，属性值会被展示到模板中。</li>
+<li>输入属性：@Input()，用来接收外部传入的数据，输入属性使得父组件直接传递数据给子组件。angular程序其实就是一个组件树，输入属性允许在组件树种传递数据。</li>
+<li>输出属性：@Outputs()，与前面的输入属性相对的，定义一个其它组件需要的事件或属性在组件间共享数据。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/3.png" alt="image.png"></li>
+</ol>
+</li>
+<li><p>app.component.html</p>
+<ol>
+<li>数据绑定Angular8 实战（七）【初识组件】顶部TabBar，就是模板的各个部分与控制器的各个部分相互作用的一个机制。我们在模板种添加绑定标记，如何把二者关联起来Angular8 实战（七）【初识组件】顶部TabBar是最常见的将控制器的值绑定到模板种的绑定方法，叫差值表达式。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/4.png" alt="image.png"></li>
+<li>Angular 中数据文本绑定、绑定Html、绑定属性、双向数据绑定的实现方式<ul>
+<li>数据文本绑定，使用<code>{{}}```
+         在组件类中声明属性 ```public test1="测试数据文本绑定";``` ，然后在模板中绑定属性```{{test1}}</code></li>
+<li>绑定Html，可以使用绑定属性的方式，给div绑定innerHTML属性<br> 在组件类中声明属性<code>public test2="&lt;h2&gt;用h2标签来测试绑定Html&lt;/h2&gt;"</code>，然后在模板中通过<code>[]</code>绑定，如：<code>&lt;div innerHTML="test2"&gt;&lt;/div&gt;</code></li>
+<li>属性绑定，上面可知使用[]来绑定元素的属性<br>在组件类中声明属性<pre class="line-numbers language-none"><code class="language-none">public id="testId"; 
+public title="test title"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+在模板中通过[]绑定<br><code>&lt;div [id]="id" [title]="title"&gt;测试属性绑定&lt;/div&gt;</code></li>
+<li>双向绑定<br>使用数据双向绑定需要在项目中引入FormModule，在根模块app.module.ts中引入<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/5.png" alt="image.png"><br>在组件类中声明属性<br><code>public inputValue="default value"</code><br>在模板中通过[(ngModel)]绑定<br><code>&lt;input type="text" [(ngModel)]="inputValue"/&gt;{{inputValue}}</code><h2 id="完成顶部TabBar"><a href="#完成顶部TabBar" class="headerlink" title="完成顶部TabBar"></a>完成顶部TabBar</h2>我们打开pinduoduo，F12 选择设备为iPhone X，可以看到顶部导航栏可左右滑动，但不会上下移动。底部也是固定不动的。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/6.gif" alt="6.gif"></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>根据上面gif的演示，我们可以大概知道首页的组件结构，如下：<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/7.png" alt="image.png"></p>
+<p>下面我们在AppComponent中实现顶部导航栏，暂时不考虑从API 获取数据源，全部在前端hardcode一部分数据源。</p>
+<ol>
+<li>首先，导航栏部分有好多个tab项，“推荐”，“女装”，“鞋包”，“家装”。。。每一个都手动在html文件中写是不友好的，而且代码看上去也不美观，对于以后tab项的维护也不是很方便。所以，我们先在组件类中声明属性topBars，然后在模板中绑定即可。</li>
+</ol>
+<ul>
+<li><p>组件类中声明属性<br><code>public topBars = ['热门', '女装', '男装', '鞋包', '家装', '家居百货', '汽车', '美食', '儿童', '母婴'];</code></p>
+</li>
+<li><p>模板中绑定组件类中声明的属性并循环此属性值 （ngFor 后面章节会有细解）</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of topBars"&gt;{{item}}&lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>样式文件中调整显示<br>```<br>ul{</p>
+<pre><code>     padding:0;
+     margin:0;
+</code></pre>
+<p> }</p>
+<p>ul li{</p>
+<pre><code>     display: inline-block;
+     margin: 0 5px;
+</code></pre>
+<p>}</p>
+</li>
+</ul>
+<p>此时一个不可拖动的顶部导航栏就完成了，如下图<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/8.png" alt="image.png"></p>
+<p>滚动部分会在下一节讲解~</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Cecilia Lu</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Cecilia Lu</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
+                                </a>
+                            
+                                <a href="/tags/Angular8/">
+                                    <span class="chip bg-color">Angular8</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $(function () {
+        $('.tabs').tabs();
+    });
 </script>
 
-
+            
+        </div>
     </div>
-</div>
-
-<main class="content">
 
     
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;Post Tags
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/Node-RED/" title="Node-RED: 12">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="Node-RED" style="background-color: #F9EBEA;">Node-RED
-                        <span class="tag-length">12</span>
-                    </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
+                        
+                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
+                    </div>
                 </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Cecilia Lu
+                            
+                        </span>
+                    </div>
+                </div>
                 
-                
-                <a href="/tags/Frontend/" title="Frontend: 8">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Frontend" style="background-color: #F5EEF8;">Frontend
-                        <span class="tag-length">8</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Angular8/" title="Angular8: 8">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Angular8" style="background-color: #D5F5E3;">Angular8
-                        <span class="tag-length">8</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Book/" title="Book: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Book" style="background-color: #E8F8F5;">Book
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/English/" title="English: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="English" style="background-color: #FEF9E7;">English
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/The-Little-Prince/" title="The Little Prince: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="The Little Prince" style="background-color: #F8F9F9;">The Little Prince
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Animal-Farm/" title="Animal Farm: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Animal Farm" style="background-color: #82E0AA;">Animal Farm
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Node-RED/">
+                        <span class="chip bg-color">Node-RED</span>
+                    </a>
+                    
+                </div>
                 
             </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-6-Angular%20project%20structure/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Angular8 实战（六）工程源码文件结构">
+                        
+                        <span class="card-title">Angular8 实战（六）工程源码文件结构</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Cecilia Lu
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
+                    </a>
+                    
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
         </div>
     </div>
 </div>
 
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Node-RED 系列（11）-- how to copy nodes and flows">
-                            
-                            <span class="card-title">Node-RED 系列（11）-- how to copy nodes and flows</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-10-Subflows/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/35.jpg" class="responsive-img" alt="Node-RED 系列（10）-- Subflows">
-                            
-                            <span class="card-title">Node-RED 系列（10）-- Subflows</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-9-PM2/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="Node-RED 系列（9）-- Using PM2 to keep Node-RED running on Windows">
-                            
-                            <span class="card-title">Node-RED 系列（9）-- Using PM2 to keep Node-RED running on Windows</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-8-Authentication/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Node-RED 系列（8）-- Oauth/OpenID based authentication with Id4Flows">
-                            
-                            <span class="card-title">Node-RED 系列（8）-- Oauth/OpenID based authentication with Id4Flows</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-7-Initializing%20flow/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Node-RED 系列（7）-- Initializing Node-RED Flows">
-                            
-                            <span class="card-title">Node-RED 系列（7）-- Initializing Node-RED Flows</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-6-Core-Nodes-4/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="Node-RED 系列（6）-- Core nodes (Http In/Http Request)">
-                            
-                            <span class="card-title">Node-RED 系列（6）-- Core nodes (Http In/Http Request)</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-5-Core-Nodes-3/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Node-RED 系列（5）-- Core nodes (Template/Split/Join)">
-                            
-                            <span class="card-title">Node-RED 系列（5）-- Core nodes (Template/Split/Join)</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-4-Core-Nodes-2/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Node-RED 系列（4）-- Core nodes (Change/Switch/Json)">
-                            
-                            <span class="card-title">Node-RED 系列（4）-- Core nodes (Change/Switch/Json)</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-3-Core-Nodes-1/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Node-RED 系列（3）-- Core nodes (Inject/Debug/Function)">
-                            
-                            <span class="card-title">Node-RED 系列（3）-- Core nodes (Inject/Debug/Function)</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
-                            
-                            <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/28/Node-RED/Node-RED-1-Install/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/32.jpg" class="responsive-img" alt="Node-RED 系列(1)-Install">
-                            
-                            <span class="card-title">Node-RED 系列(1)-Install</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="Node-RED" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2020/04/28/Node-RED/Node-RED-0-Overview/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="Node-RED 系列">
-                            
-                            <span class="card-title">Node-RED 系列</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Cecilia Lu
-                                
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </article>
 </main>
 
 
