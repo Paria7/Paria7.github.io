@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    477
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -486,7 +486,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>There a several ways that you can copy nodes and flows between flows.</p>
+<p>They are:</p>
+<ul>
+<li>Select Copy and Paste</li>
+<li>Export and Import Clipboard</li>
+<li>Save to and Retrieve from the local library</li>
+</ul>
+<h2 id="Select-Copy-and-Paste"><a href="#Select-Copy-and-Paste" class="headerlink" title="Select Copy and Paste"></a>Select Copy and Paste</h2><p>Just select the nodes that you want to copy then <code>control + C</code> and <code>control + V</code>.<br><img src="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/11-1.gif" alt="11-1.gif"></p>
+<h2 id="Export-and-Import-Clipboard"><a href="#Export-and-Import-Clipboard" class="headerlink" title="Export and Import Clipboard"></a>Export and Import Clipboard</h2><p>Just select the nodes that you want to export and click the export and then open a text to store the flow on the clipboard with the flow as its file extension. After this, I can take that text document and I can install it on another node-red installation on another computer. It’s a very good way of exporting your flows to other computers to other users.<br><img src="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/11-2.gif" alt="11-2.gif"></p>
+<p>To get a flow that’s been exported into your node-red flow, all you do is use the opposite which is the import. Go to import and import from the clipboard. Open the text document then copy the stored flow to the clipboard and import.<br><img src="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/11-3.gif" alt="11-3.gif"></p>
+<h2 id="Save-to-and-Retrieve-from-the-local-library"><a href="#Save-to-and-Retrieve-from-the-local-library" class="headerlink" title="Save to and Retrieve from the local library"></a>Save to and Retrieve from the local library</h2><p>The third method is by using the library. Using the library you can actually copy flows and you can also copy individual functions. We’re going to look at doing both. </p>
+<p>Just select the nodes and then go to export and this time I’m exporting into the library not clipboard. And I need to give it a name, I can also give it a subdirectory. By default, they’re stored in the library folder. The flows are stored in a subfolder called flows and the functions in a subfolder called functions.</p>
+<p>The main difference between exporting it to the library or exporting it to the clipboard and then to a text file is the library used when you want to reuse the flows and functions on the same machine. The clipboard and the file issues when you actually want to transfer the two flows to a different machine or a different user.</p>
+<p><em>flows</em><br><img src="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/11-4.gif" alt="11-4.gif"></p>
+<p><em>fuctions</em><br>If you want to override the function in the libraries, just open the function and edit it and then save it as the same file. It will override the original one. It’s important to realize that once you’ve imported the function into the function node then it’s stored in that function node. If you go back and change the library, the function in the library doesn’t actually change the  one you’ve already imported into a flow. So you’d have to re-import it back into the flow if you wanted to pick up the changes in the library that you’ve made.<br><img src="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/11-5.gif" alt="11-5.gif"></p>
+<p>In the end, this is the node-red directory on my machine, and you can see the lib folder, go to folder you can see those two folders there one called flows one called functions. They were created by the system.<br><img src="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/11-6.gif" alt="11-6.gif"></p>
+
                 
             </div>
             <hr/>
@@ -999,7 +1015,7 @@
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                             class="white-color">
-                                            4.6k
+                                            5k
                                         </span>&nbsp;字
                                         
                                             
