@@ -109,6 +109,44 @@
     
     
     <entry>
+      <title>Node-RED 系列（8）-- Oauth/OpenID based authentication with Id4Flows</title>
+      <link href="/2020/04/29/Node-RED/Node-RED-8-Authentication/"/>
+      <url>/2020/04/29/Node-RED/Node-RED-8-Authentication/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Securing-Node-RED"><a href="#Securing-Node-RED" class="headerlink" title="Securing Node-RED"></a>Securing Node-RED</h1><h2 id="OAuth-OpenID-based-authentication-with-Id4"><a href="#OAuth-OpenID-based-authentication-with-Id4" class="headerlink" title="OAuth/OpenID based authentication with Id4"></a>OAuth/OpenID based authentication with Id4</h2><p>To use an external authentication source, Node-RED can take use a wide range of the strategies provided by <a href="http://www.passportjs.org/">Passport</a>.</p><h3 id="Steps-as-below"><a href="#Steps-as-below" class="headerlink" title="Steps as below:"></a>Steps as below:</h3><ol><li><p>In the node-red installation host, install passport-oauth2 module:<br><img src="/2020/04/29/Node-RED/Node-RED-8-Authentication/install-passport.png" alt="install passport"></p></li><li><p>In your Id4, add new client and remember set the “Client Secret” and add “authorization_code” as allowed grant type</p><ul><li>ClientID</li><li>ClientSecret</li><li>Allowed Grant type (authorization_code)</li><li>redirect url</li></ul></li><li><p>Then add/modify the following in your settings.js<br><img src="/2020/04/29/Node-RED/Node-RED-8-Authentication/configuration.png" alt="configuration"></p></li><li><p>Results as below<br><img src="/2020/04/29/Node-RED/Node-RED-8-Authentication/login-with-authentication.png" alt="login with authentication"></p></li></ol><p>Hope this can help you.</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Node-RED </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Node-RED 系列（7）-- Initializing Node-RED Flows</title>
+      <link href="/2020/04/29/Node-RED/Node-RED-7-Initializing%20flow/"/>
+      <url>/2020/04/29/Node-RED/Node-RED-7-Initializing%20flow/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Node-RED </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Node-RED 系列（6）-- Core nodes (Http In/Http Request)</title>
       <link href="/2020/04/29/Node-RED/Node-RED-6-Core-Nodes-4/"/>
       <url>/2020/04/29/Node-RED/Node-RED-6-Core-Nodes-4/</url>
