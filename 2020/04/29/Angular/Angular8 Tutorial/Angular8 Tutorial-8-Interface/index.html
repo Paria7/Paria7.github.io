@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Angular8 实战（三）环境搭建, Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（八）【接口Interface Flex布局】让顶部导航滚动, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Angular8 实战（三）环境搭建 | Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（八）【接口Interface Flex布局】让顶部导航滚动 | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Angular8 实战（三）环境搭建</h1>
+                    <h1 class="description center-align post-title">Angular8 实战（八）【接口Interface Flex布局】让顶部导航滚动</h1>
                 </div>
             </div>
         </div>
@@ -465,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    611
+                    514
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    1 Min
                 </div>
                 
 
@@ -490,22 +490,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Angular 环境搭建：<br>Node &gt;&gt; NPM/CNPM &gt;&gt; Angular CLI</p>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">Node.js</a></h2><ul>
-<li>安装node.js的目的是使用npm管理项目依赖的软件包(简单理解就是项目依赖的类库)<h2 id="NPM-CNPM"><a href="#NPM-CNPM" class="headerlink" title="NPM/CNPM"></a>NPM/CNPM</h2></li>
-<li>传统项目依赖的软件包，通常是先下载到本地，再引用到项目中。而这其中就有问题，比如：项目依赖A,B,C 三个软件包，但是B又依赖 E,F 两个软件包，E 又依赖的M,N两个软件包，这就导致我们的维护工作非常的不便。再者，之后的升级工作也会非常的繁琐。</li>
-<li>而NPM 提供了一个很好的方式，我们只需要在配置文件中配置我们所需要的软件包，NPM会统一从中心站点下载所需的软件依赖包安装到本地，并且NPM会自己处理好软件包各自的依赖项。*(中心站点指的是npm 软件包会一般会统一上传到一个中心站点，方便其他人下载使用)*</li>
-<li>CNPM，由于网络环境等原因，NPM 一般访问速度会很慢。为了解决这个问题，CNPM作为替代的包管理工具就出现了。CNPM是淘宝团队针对NPM中心站点在大陆做的一个镜像。使用CNPM 可以快速安装依赖包，提升开发体验。就个人而言，建议大家能用NPM的情况下尽量使用NPM。因为CNPM可能会安装到版本较旧的包，引发一些诡异的错误。<h2 id="Angular-CLI"><a href="#Angular-CLI" class="headerlink" title="Angular CLI"></a>Angular CLI</h2></li>
-<li>Angular CLI 简称脚手架，其实是一个命令行工具。使用Angular CLI 使我们无须理会复杂的配置，更专注Angular。这其实是前端的一个趋势，比如React，React也有自己的命令行工具；Vue，Vue也有Vue CLI 都是相同的思路，屏蔽掉复杂的配置，着重在框架本身。</li>
-</ul>
-<h2 id="简单安装步骤"><a href="#简单安装步骤" class="headerlink" title="简单安装步骤"></a>简单安装步骤</h2><ul>
-<li><p>Node.js &amp; npm<br><em>1. Nodejs官网下载LTS版本，双击安装，全部Next，直到安装成功</em><br><em>2. 运行cmd, 输入node-v 确认nodejs 版本；输入npm -v 确认npm 版本</em><br><em>3. 配置npm 和 nodejs 环境变量</em><br><em>4. 配置源地址</em></p>
-</li>
-<li><p>Typescript<br><em>1. 运行cmd, 输入npm install -g typescript</em><br><em>2. 输入tsc -v查看typescript 版本</em></p>
-</li>
-<li><p>Angular CLI<br><em>1. 运行cmd, 输入npm install -g @angular/cli，如果需要指定版本，则如：npm install -g @angular/<a href="mailto:cli@8.3.12">cli@8.3.12</a></em><br><em>2. 输入ng –version查看Angular CLI安装版本</em></p>
-</li>
-</ul>
+                <p>本章主要完善上一章的顶部导航栏，开工之前，我们先学习几个新的概念。</p>
+<h2 id="Interface-接口"><a href="#Interface-接口" class="headerlink" title="Interface (接口)"></a>Interface (接口)</h2><h6 id="可选属性，只读属性"><a href="#可选属性，只读属性" class="headerlink" title="可选属性，只读属性"></a>可选属性，只读属性</h6><p>Interface 存在于很多开发语言中，如C#，Java等。但是在这些语言中，接口的概念更偏向于一个类的共性的模板（此处不详解）。<br>但是在TypeScript中，Interface还有一个非常重要的作用之一就是类型命名。不同于C#,Java中的interface只能有方法，在TypeScript中，可以给interface添加属性，这样对于复杂的类型就可以用interface命名。如下面的示例，如果你添加了一个属性不属于定义的interface中，系统会有错误提示。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-8-Interface/1.png" alt="image.png"><br>Interface有两种属性：可选属性，只读属性。属性后添加“？”代表可选属性即可有可无，未添加“？”代表只读属性，不可更改。如下所示<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-8-Interface/2.png" alt="image.png"></p>
+<h6 id="函数类型，索引类型，类的类型"><a href="#函数类型，索引类型，类的类型" class="headerlink" title="函数类型，索引类型，类的类型"></a>函数类型，索引类型，类的类型</h6><p>函数类型：TypeScript中的Interface可以给函数做类型，即可以定义某一种类型的函数<br>索引类型：可以创建像数据字典一样的数据结构<br>类的类型：类似于其他语言，对于类的抽象和约束</p>
+<h2 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h2><p>Flex “弹性布局”，有两篇文章图文并茂的解释了Flex布局，自行查看。<br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex布局教程：语法篇</a><br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">Flex布局教程：实例篇</a></p>
+<h2 id="手机真机调试"><a href="#手机真机调试" class="headerlink" title="手机真机调试"></a>手机真机调试</h2><p>真机调试的方法就是确保手机和电脑处于同一WiFi网络。<br>在启动程序时使用命令<code>ng serve --host 0.0.0.0</code><br>最后用手机浏览器打开<code>http://&lt;电脑IP&gt;:4200</code></p>
+<h2 id="完善顶部导航栏"><a href="#完善顶部导航栏" class="headerlink" title="完善顶部导航栏"></a>完善顶部导航栏</h2><p>上一章我们用字符串数组做了导航栏条目，但是真正意义上的导航包含两个部分：【1】显示导航条目，【2】点击导航条目的动作。那么对于当前的单一字符串是无法满足第二点的，所以我们就需要用到interface了。<br>详细请移步下一章节~</p>
 
                 
             </div>
@@ -532,7 +522,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-3-Setup%20environment/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-3-Setup%20environment/</a>
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-8-Interface/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-8-Interface/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -749,13 +739,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/">
+                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/34.jpg" class="responsive-img" alt="Angular8 实战（四）开发工具配置">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
                         
-                        <span class="card-title">Angular8 实战（四）开发工具配置</span>
+                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -779,12 +769,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Frontend/">
-                        <span class="chip bg-color">Frontend</span>
-                    </a>
-                    
-                    <a href="/tags/Angular8/">
-                        <span class="chip bg-color">Angular8</span>
+                    <a href="/tags/Node-RED/">
+                        <span class="chip bg-color">Node-RED</span>
                     </a>
                     
                 </div>
@@ -798,13 +784,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-2-Angular%20Framework/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Angular8 实战（二）Angular基础框架">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Angular8 实战（七）【初识组件】顶部TabBar">
                         
-                        <span class="card-title">Angular8 实战（二）Angular基础框架</span>
+                        <span class="card-title">Angular8 实战（七）【初识组件】顶部TabBar</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
