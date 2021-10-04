@@ -519,8 +519,8 @@
 <ol>
 <li>数据绑定Angular8 实战（七）【初识组件】顶部TabBar，就是模板的各个部分与控制器的各个部分相互作用的一个机制。我们在模板种添加绑定标记，如何把二者关联起来Angular8 实战（七）【初识组件】顶部TabBar是最常见的将控制器的值绑定到模板种的绑定方法，叫差值表达式。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/4.png" alt="image.png"></li>
 <li>Angular 中数据文本绑定、绑定Html、绑定属性、双向数据绑定的实现方式<ul>
-<li>数据文本绑定，使用<code>{{}}```
-         在组件类中声明属性 ```public test1="测试数据文本绑定";``` ，然后在模板中绑定属性```{{test1}}</code></li>
+<li>数据文本绑定，使用<code>{{}}`
+         在组件类中声明属性 `public test1="测试数据文本绑定";` ，然后在模板中绑定属性`{{test1}}</code></li>
 <li>绑定Html，可以使用绑定属性的方式，给div绑定innerHTML属性<br> 在组件类中声明属性<code>public test2="&lt;h2&gt;用h2标签来测试绑定Html&lt;/h2&gt;"</code>，然后在模板中通过<code>[]</code>绑定，如：<code>&lt;div innerHTML="test2"&gt;&lt;/div&gt;</code></li>
 <li>属性绑定，上面可知使用[]来绑定元素的属性<br>在组件类中声明属性<pre class="line-numbers language-none"><code class="language-none">public id="testId"; 
 public title="test title"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -537,23 +537,19 @@ public title="test title"<span aria-hidden="true" class="line-numbers-rows"><spa
 <li>首先，导航栏部分有好多个tab项，“推荐”，“女装”，“鞋包”，“家装”。。。每一个都手动在html文件中写是不友好的，而且代码看上去也不美观，对于以后tab项的维护也不是很方便。所以，我们先在组件类中声明属性topBars，然后在模板中绑定即可。</li>
 </ol>
 <ul>
-<li><p>组件类中声明属性<br><code>public topBars = ['热门', '女装', '男装', '鞋包', '家装', '家居百货', '汽车', '美食', '儿童', '母婴'];</code></p>
-</li>
-<li><p>模板中绑定组件类中声明的属性并循环此属性值 （ngFor 后面章节会有细解）</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+<li>组件类中声明属性<br><code>public topBars = ['热门', '女装', '男装', '鞋包', '家装', '家居百货', '汽车', '美食', '儿童', '母婴'];</code></li>
+<li>模板中绑定组件类中声明的属性并循环此属性值 （ngFor 后面章节会有细解）<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
   &lt;li *ngFor="let item of topBars"&gt;{{item}}&lt;/li&gt;
 &lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-<li><p>样式文件中调整显示<br>```<br>ul{</p>
-<pre><code>     padding:0;
-     margin:0;
-</code></pre>
-<p> }</p>
-<p>ul li{</p>
-<pre><code>     display: inline-block;
-     margin: 0 5px;
-</code></pre>
-<p>}</p>
-</li>
+<li>样式文件中调整显示<pre class="line-numbers language-none"><code class="language-none">ul{
+         padding:0;
+         margin:0;
+ }
+
+ul li{
+         display: inline-block;
+         margin: 0 5px;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <p>此时一个不可拖动的顶部导航栏就完成了，如下图<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/8.png" alt="image.png"></p>
 <p>滚动部分会在下一节讲解~</p>
