@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    477
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -494,7 +494,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This tutorial introduces the Node-RED editor and creates a flow that demonstrates the Inject, Debug and Function nodes.</p>
+<h2 id="Access-the-editor"><a href="#Access-the-editor" class="headerlink" title="Access the editor"></a>Access the editor</h2><p>With the Node-RED  <font color="#FF0000">running</font> , open the editor in a web browser.<br>If you are using a browser on the same computer that is running Node-RED, you can access it with the url:  <a target="_blank" rel="noopener" href="http://localhost:1880/">http://localhost:1880</a>.</p>
+<p>If you are using a browser on another computer, you will need to use the ip address of the computer running Node-RED: http://<ip-address>:1880</ip-address></p>
+<p><font color="#FF0000">Note:</font> please add Inbound rules  if necessary<br><img src="https://upload-images.jianshu.io/upload_images/17868753-da9cf4944be2e7a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="Node-RED editor"></p>
+<h2 id="Add-an-Inject-node"><a href="#Add-an-Inject-node" class="headerlink" title="Add an Inject node"></a>Add an Inject node</h2><p>The Inject node allows you to inject messages into a flow, either by clicking the button on the node or setting a time interval between injects.<br>Drag one onto the <font color="#FF0000">workspace</font> from the <font color="#FF0000">palette</font>.<br>Select the newly added Inject node to see information about its properties and a description of what it does in the <font color="#FF0000">information sidebar pane</font> </p>
+<h2 id="Add-a-Debug-node"><a href="#Add-a-Debug-node" class="headerlink" title="Add a Debug node"></a>Add a Debug node</h2><p>The Debug node causes any message to be displayed in the <font color="#FF0000">Debug sidebar</font>. By default, it just displays the payload of the message, but it is possible to display the entire message object.</p>
+<h2 id="Wire-the-two-node-together"><a href="#Wire-the-two-node-together" class="headerlink" title="Wire the two node together"></a>Wire the two node together</h2><p>Connect the Inject and Debug nodes together by <font color="#FF0000">dragging</font> between the output port of one to the input port of the other.</p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>At this point, the nodes only exist in the editor and must be deployed to the server.</p>
+<p>With the Debug sidebar tab selected, click the Inject button. You should see numbers appear in the sidebar. By default, the inject node use the number of milliseconds since January 1st 1970 as its payload.</p>
+<h2 id="Add-a-Function-node"><a href="#Add-a-Function-node" class="headerlink" title="Add a Function node"></a>Add a Function node</h2><p>The Function node allows you to pass each message though a JavaScript function.<br>Delete the existing wire (select it and press the delete on the keyboard).<br>Wire a Function node in between the Inject and Debug nodes.<br>Double-click on the Function node to bring up the editor dialog. Copy the following code into the function field:</p>
+<pre class="line-numbers language-none"><code class="language-none">// Create a Date object from the payload
+var date = new Date(msg.payload);
+// Change the payload to be a formatted Date string
+msg.payload = date.toString();
+// Return the message so it can be sent on
+return msg;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>click Done to close the edit dialog and then click the deploy button.<br>Now when you click the Inject button, the messages in the sidebar will now be formatted is readable timestamps.</p>
+<hr>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>This flow demonstrates the basic concept of creating a flow. It shows how the Inject node can be used to manually trigger a flow, and how the Debug node displays the messages in the sidebar. It also shows how the Function node can be used to write custom JavaScript to run against messages.</p>
+<h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><p>The flow created in the tutorial represented by the following json. To import it into the editor, copy it to your clipboard and then paste it into the Import dialog.</p>
+
                 
             </div>
             <hr/>
@@ -741,13 +761,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/10/02/test/">
+                <a href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -771,16 +791,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tag1/">
-                        <span class="chip bg-color">tag1</span>
+                    <a href="/tags/Book/">
+                        <span class="chip bg-color">Book</span>
                     </a>
                     
-                    <a href="/tags/tag2/">
-                        <span class="chip bg-color">tag2</span>
+                    <a href="/tags/English/">
+                        <span class="chip bg-color">English</span>
                     </a>
                     
-                    <a href="/tags/tag3/">
-                        <span class="chip bg-color">tag3</span>
+                    <a href="/tags/The-Little-Prince/">
+                        <span class="chip bg-color">The Little Prince</span>
                     </a>
                     
                 </div>
@@ -794,13 +814,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/">
+                <a href="/2021/10/02/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups">
+                        <img src="/medias/featureimages/36.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -820,22 +840,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Book/">
-                        <span class="chip bg-color">Book</span>
-                    </a>
-                    
-                    <a href="/tags/English/">
-                        <span class="chip bg-color">English</span>
-                    </a>
-                    
-                    <a href="/tags/The-Little-Prince/">
-                        <span class="chip bg-color">The Little Prince</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1039,7 +1043,7 @@
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                             class="white-color">
-                                            732
+                                            1.2k
                                         </span>&nbsp;字
                                         
                                             
