@@ -27,29 +27,6 @@
     
     
     <entry>
-      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
-      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/"/>
-      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Book </tag>
-            
-            <tag> English </tag>
-            
-            <tag> The Little Prince </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Chapter1</title>
       <link href="/2021/10/02/Books/English/Animal%20Farm/Chapter1/"/>
       <url>/2021/10/02/Books/English/Animal%20Farm/Chapter1/</url>
@@ -76,6 +53,29 @@
       <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
       <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
       <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Book </tag>
+            
+            <tag> English </tag>
+            
+            <tag> The Little Prince </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
+      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/"/>
+      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -132,7 +132,7 @@
       <link href="/2020/04/29/Node-RED/Node-RED-5-Core-Nodes-3/"/>
       <url>/2020/04/29/Node-RED/Node-RED-5-Core-Nodes-3/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h2><p>The Template node can be used to generated text using a message’s properties to fill out a template.</p><p>It use the <a href="https://mustache.github.io/mustache.5.html">Mustache</a> templating language to generate the result.</p><p>For example, a template of:</p><pre class="line-numbers language-none"><code class="language-none">This is the payload: {{payload}} !<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>Will replace <code>{{payload}}</code> with the value of the message’s <code>payload</code> property.</p><p>By default, Mustache will replace certain characters with their HTML escape codes. To stop that happening, you can use triple braces: <code>{{{payload}}}</code>.</p><p>Mustache supports simple loops on lists. For example, If <code>msg.payload</code> contains an array of name, such as: <code>["Tom", "Jack", "Tony"]</code>, the following template will create an HTML list of the names:</p><pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;{{#payload}}  &lt;li&gt;{{.}}&lt;/li&gt;{{/payload}}&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;  &lt;li&gt;Tom&lt;/li&gt;  &lt;li&gt;Jack&lt;/li&gt;  &lt;li&gt;Tony&lt;/li&gt;&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>The node will set the configured message or context property with the result of the template. If the template generates the valid JSON or YAML content, it can be configured to parse the result to the corresponding JavaScript object.</p><p><em>Usage examples:</em></p><p><em>Source</em></p><h2 id="Split"><a href="#Split" class="headerlink" title="Split"></a>Split</h2><p>Split a message into a sequence of messages.</p><p><strong>Inputs</strong></p><div><font color="#FF0000">payload</font></div>The behavior of the node is determined by the type of ```msg.payload```:- **string/buffer** - the message is split using specified character (default: ```\n```), buffer sequence or into fixed lengths.- **array** - the message is split into either individual array elements, or arrays of a fixed-length.- **object** - a message is sent for each key/value pair of the object.<p><strong>Outputs</strong></p><div><font color="#FF0000">parts</font></div>This property contains information about how the message was split from the original message. If passed to the **Join** node, the sequence can be reassembled into a single message. The property has the following properties:- ```id``` - an identifier for the group of messages- ```index``` - the position of the group- ```count``` - if know, the total number of messages in the group. See 'streaming mode' below.- ```type``` - the type of message - string/array/object/buffer- ```ch``` - for a string or buffer, the data used to split the message as either the string or an array of bytes- ```key``` - for an object, the key of the property this message was created from. The node can be configured to also copy this value to another message properties, such as ```msg.topic```- ```len``` - the length of each message when split using a fixed length value<p>This node makes it easy to create a flow that performs common actions across a sequence of messages before, using the <strong>join</strong> node, recombining the sequence into a single message.</p><p>It uses the <code>msg.parts</code> property to track the individual parts of a sequence.</p><p><strong>Streaming mode</strong><br>The node can also be used to reflow a stream of messages. For example, a serial device that sends newline-terminated commands may deliver a single message with a partial command as its end. In ‘Streaming mode’, this node will split a message and send each complete segment. If there is a partial segment at the end, the node will hold on to it and prepend it to the next message that is received.</p><p>When operating in this mode, the node will not set the <code>msg.parts.count</code> property as it does not know how many messages to expect in the stream. This means it cannot be used with the <strong>join</strong> node in its automatic mode.</p><p><em>Usage examples:</em></p><p><em>Source</em></p><h2 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h2><p>Joins sequences of messages into a single message.<br>There are three modes available:</p><ul><li><p><strong>automatic</strong><br>When paired with the <strong>split</strong> node, it will automatically join the messages to reverse the split that was performed.</p></li><li><p><strong>manual</strong><br>Join sequences of message in a variety of ways.</p></li><li><p><strong>reduce sequence</strong><br>Apply an expression against all messages in a sequence to reduce it to a single message.</p></li></ul><p><strong>Inputs</strong></p><div><font color="#FF0000">parts</font></div>To automatically join a sequence of messages, they should all have this property set. The **split** node generates this property but it can be manually created. It has the following properties:- ```id``` - an identifier for the group of messages- ```index``` - the position within the goup- ```count``` - the total number of messages in the group- ```type``` - the type of message - string/array/object/buffer- ```ch``` - for a string or buffer, the data used to split the message as either the string or an array of bytes- ```key``` - for an object, the key of the property this message was created from- ```len``` - the length of each message when split using a fixed length value<div><font color="#FF0000">complete</font></div>If set, the node will append the payload, and then send the output message in its current state. If you don't wish to append the payload, delete it from the msg.<p><em>Usage examples:</em></p><p><em>Source</em></p>]]></content>
       
       
       
