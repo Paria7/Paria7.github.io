@@ -28,8 +28,8 @@
     
     <entry>
       <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
-      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/"/>
-      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/</url>
+      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
+      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -74,8 +74,8 @@
     
     <entry>
       <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
-      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
-      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
+      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/"/>
+      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -109,11 +109,49 @@
     
     
     <entry>
+      <title>Node-RED 系列（11）-- how to copy nodes and flows</title>
+      <link href="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/"/>
+      <url>/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Node-RED </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Node-RED 系列（10）-- Subflows</title>
+      <link href="/2020/04/29/Node-RED/Node-RED-10-Subflows/"/>
+      <url>/2020/04/29/Node-RED/Node-RED-10-Subflows/</url>
+      
+        <content type="html"><![CDATA[<p>In this article, we will learn about how to create and use Node-RED subflows.<br>A subflow is a collection of connected nodes that can be used as a single unit just like a node.<br>It is a way of packaging functionality from several nodes into a single node.</p><h2 id="Creating-Subflows"><a href="#Creating-Subflows" class="headerlink" title="Creating Subflows"></a>Creating Subflows</h2><p>You can create a subflow in two ways:</p><ul><li>An empty subflow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/create-empty-subflow.png" alt="create an empty subflow"></li></ul><p><strong>Notice:</strong> you cannot put the input and output node inside the subflows, otherwise, you cannot reuse it as a functionality node.</p><p>If you want to delete the subflow, then double click the subflow and click the delete button<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/delete-subflow.png" alt="delete subflow"></p><ul><li>Selecting nodes from an existing flow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/existing-subflow.gif" alt="existing subflow"></li></ul><p><strong>Notice:</strong> Be careful if you want to change the subflow, because it will affects any flow that’s actually using this subflow not just the one you’re currently working on.</p><h2 id="Difference-between-subflow-and-link-node"><a href="#Difference-between-subflow-and-link-node" class="headerlink" title="Difference between subflow and link node"></a>Difference between subflow and link node</h2><p>There are some differences between subflow and link node.<br>There are two cases about the link node. A link out node wired to link in node in a same tab and a different tab.<br>Condition | Subflow |  Link node(same tab) | Link node(different tab)<br>-|-|-|-<br>Share context.flow | NO | YES |NO|<br>Share context.global | YES | YES |YES|<br>Catch error in caller tab | YES | YES |NO|<br>Node actions(e.g. inject node) | NO | YES |YES|</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Node-RED </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Node-RED 系列（9）-- Using PM2 to keep Node-RED running on Windows</title>
       <link href="/2020/04/29/Node-RED/Node-RED-9-PM2/"/>
       <url>/2020/04/29/Node-RED/Node-RED-9-PM2/</url>
       
-        <content type="html"><![CDATA[<p>#Node-RED running on Windows<br>Once installed, the simple way to run Node-RED is to use the <strong>node-red</strong> command in a command prompt. If you have installed Node-RED as a global npm package, you can use the node-red command:<br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/node-red.png" alt="node-red"><br>This will output the Node-RED log to the terminal. You must keep the terminal open in order to keep Node-RED running.</p><p>#Why using PM2<br>If you are using Windows to develop Node-Red flows or nodes, you may find it helpful to use <strong><a href="https://pm2.keymetrics.io/">PM2</a></strong> to run Node-RED. This can be configured to automatically restart when files change, always keep Node-RED running and manage log output.</p><p>PM2 is a process manager for Node applications with monitoring, load balancing, automatic restart etc.<br>And it’s perfect when you want to take your individual code and use all the CPUs on all the servers and keep the process alive forever.</p><p>#Steps to using PM2 to keep Node-RED running on Windows</p><ol><li><p>Install PM2<br> Execute the following at the command prompt:<br> <code>npm install –g –unsafe-perm pm2</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/install-pm2.png" alt="pm2 install"></p></li><li><p>Install and config pm2-windows-service<br> Execute the following at the command prompt:<br> <code>npm i –g pm2-windows-service</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/install-pm2-windows.png" alt="install pm2 windows service"></p></li><li><p>Add environment variables for PM2<br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/configure-pm2-environment-variable.png" alt="setting environment variable"></p></li><li><p>Install PM2 Service<br> Open command line as administrator and execute below command<br> <code>pm2-service-install</code><br> <em>Tips: choose ‘N’ and continue, and then PM2 service install successfully</em><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-service-install.png" alt="install pm2 service"><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-service.png" alt="pm2 service"></p></li><li><p>Locate the Node-RED red.js File and add it to PM2<br> Execute the following at the command prompt:<br> <code>pm2 start C:\Users\[replace with your user folder]\AppData\Roaming\npm\node_modules\node-red\red.js –n node-red</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-start.png" alt="pm2 start"></p></li><li><p>Save configuration<br> Execute the following at the command prompt:<br> <code>pm2 save</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-save.png" alt="pm2 save"></p></li><li><p>Check status<br> Execute the following at the command prompt:<br> <code>pm2 status</code><br> <code>pm2 info &lt;id or app name&gt;</code><br> <code>pm2 show &lt;id or app name&gt;</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-status.png" alt="pm2 status"></p></li><li><p>Restart pc and check PM2 status<br> <code>pm2 status</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-status-restart.png" alt="pm2 status"></p></li></ol><p>That’s all.<br>Hope this can help you!</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Node-RED-running-on-Windows"><a href="#Node-RED-running-on-Windows" class="headerlink" title="Node-RED running on Windows"></a>Node-RED running on Windows</h2><p>Once installed, the simple way to run Node-RED is to use the <strong>node-red</strong> command in a command prompt. If you have installed Node-RED as a global npm package, you can use the node-red command:<br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/node-red.png" alt="node-red"><br>This will output the Node-RED log to the terminal. You must keep the terminal open in order to keep Node-RED running.</p><h2 id="Why-using-PM2"><a href="#Why-using-PM2" class="headerlink" title="Why using PM2"></a>Why using PM2</h2><p>If you are using Windows to develop Node-Red flows or nodes, you may find it helpful to use <strong><a href="https://pm2.keymetrics.io/">PM2</a></strong> to run Node-RED. This can be configured to automatically restart when files change, always keep Node-RED running and manage log output.</p><p>PM2 is a process manager for Node applications with monitoring, load balancing, automatic restart etc.<br>And it’s perfect when you want to take your individual code and use all the CPUs on all the servers and keep the process alive forever.</p><h2 id="Steps-to-using-PM2-to-keep-Node-RED-running-on-Windows"><a href="#Steps-to-using-PM2-to-keep-Node-RED-running-on-Windows" class="headerlink" title="Steps to using PM2 to keep Node-RED running on Windows"></a>Steps to using PM2 to keep Node-RED running on Windows</h2><ol><li><p>Install PM2<br> Execute the following at the command prompt:<br> <code>npm install –g –unsafe-perm pm2</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/install-pm2.png" alt="pm2 install"></p></li><li><p>Install and config pm2-windows-service<br> Execute the following at the command prompt:<br> <code>npm i –g pm2-windows-service</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/install-pm2-windows.png" alt="install pm2 windows service"></p></li><li><p>Add environment variables for PM2<br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/configure-pm2-environment-variable.png" alt="setting environment variable"></p></li><li><p>Install PM2 Service<br> Open command line as administrator and execute below command<br> <code>pm2-service-install</code><br> <em>Tips: choose ‘N’ and continue, and then PM2 service install successfully</em><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-service-install.png" alt="install pm2 service"><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-service.png" alt="pm2 service"></p></li><li><p>Locate the Node-RED red.js File and add it to PM2<br> Execute the following at the command prompt:<br> <code>pm2 start C:\Users\[replace with your user folder]\AppData\Roaming\npm\node_modules\node-red\red.js –n node-red</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-start.png" alt="pm2 start"></p></li><li><p>Save configuration<br> Execute the following at the command prompt:<br> <code>pm2 save</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-save.png" alt="pm2 save"></p></li><li><p>Check status<br> Execute the following at the command prompt:<br> <code>pm2 status</code><br> <code>pm2 info &lt;id or app name&gt;</code><br> <code>pm2 show &lt;id or app name&gt;</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-status.png" alt="pm2 status"></p></li><li><p>Restart pc and check PM2 status<br> <code>pm2 status</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-status-restart.png" alt="pm2 status"></p></li></ol><p>That’s all.<br>Hope this can help you!</p>]]></content>
       
       
       

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Node-RED 系列（3）-- Core nodes (Inject/Debug/Function), Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Node-RED 系列（10）-- Subflows, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Node-RED 系列（3）-- Core nodes (Inject/Debug/Function) | Cecilia Lu&#39;s Blog</title>
+    <title>Node-RED 系列（10）-- Subflows | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/35.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Node-RED 系列（3）-- Core nodes (Inject/Debug/Function)</h1>
+                    <h1 class="description center-align post-title">Node-RED 系列（10）-- Subflows</h1>
                 </div>
             </div>
         </div>
@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    791
+                    214
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    1 Min
                 </div>
                 
 
@@ -486,69 +486,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>The inject, debug and function node are the most commonly used of the Node-RED core nodes.<br>Core nodes are the ones that are part of the initial Node-RED install.</p>
-<h2 id="Inject"><a href="#Inject" class="headerlink" title="Inject"></a>Inject</h2><blockquote>
-<p>Injects a message into a flow either manually or at regular intervals. The message payload can be a variety of types, including strings, JavaScripts objects or the current time.</p>
-<h5 id="Outputs"><a href="#Outputs" class="headerlink" title="Outputs"></a>Outputs</h5><p><em><code>payload</code></em><br>The configured payload of the message.<br><em><code>topic</code></em><br>An optional property that can be configured in the node.<br>#####Details<br>The Inject node can initiate a flow with a specific payload value. The default payload is a timestamp of the current time in millisecs since January 1st, 1970.</p>
-<p>The node also supports injecting strings, numbers, booleans, JavaScript objects, or flow/global context values.</p>
-<p>By default, the node is triggered manually by clicking on its button within the editor. It can also be set to inject at regular intervals or according to a schedule.</p>
-<p>It can also be configured to inject once each time the flows are started.</p>
-<p>The <em>maximum Interval</em> that can be specified is about 596 hours/ 24days. However if you are looking at intervals greater than one day you should consider using a scheduler node that can cope with power outages and restarts.<br><strong>Note</strong>: The <em>“Interval between times”</em> and <em>“at a specific time”</em> options use the standard cron system. This means that 20 minutes will be at the next hour, 20 minutes past and 40 minutes past - not in 20 minutes time. If you want every 20 minutes from now - use the <em>“interval”</em> option.<br><img src="/2020/04/29/Node-RED/Node-RED-3-Core-Nodes-1/inject-node.png" alt="Inject node"></p>
-<p><img src="/2020/04/29/Node-RED/Node-RED-3-Core-Nodes-1/inject-sample.png" alt="image.png"></p>
+                <p>In this article, we will learn about how to create and use Node-RED subflows.<br>A subflow is a collection of connected nodes that can be used as a single unit just like a node.<br>It is a way of packaging functionality from several nodes into a single node.</p>
+<h2 id="Creating-Subflows"><a href="#Creating-Subflows" class="headerlink" title="Creating Subflows"></a>Creating Subflows</h2><p>You can create a subflow in two ways:</p>
 <ul>
-<li><ol>
-<li>trigger the inject manually</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>debug messages</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>topic - display the topic info</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>payload - display the payload info</li>
-</ol>
-</li>
+<li>An empty subflow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/create-empty-subflow.png" alt="create an empty subflow"></li>
 </ul>
-</blockquote>
-<h2 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h2><blockquote>
-<p>Displays selected message properties in the debug sidebar tab and optionally the runtime log. By default it displays <code>msg.payload</code>, but can be configured to display any property, the full message or the result of a JSONData expression.</p>
-<h5 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h5><p>The debug sidebar provides a structured view of the messages it is sent, making it easier to understand their structure.<br>JavaScript objects and arrays can be collapsed and expanded as required. Buffer objects can be displayed as raw data or as a string if possible.</p>
-<p>Alongside each message, the debug sidebar includes information about the time the message was received, the node that sent it and the type of the message. Clicking on the source node id will reveal that node within the workspace.</p>
-<p>The button on the node can be used to enable or disable its output. It is recommended to disable or remove any Debug nodes that are not being used.</p>
-<p>The node can also be configured to send all messages to the runtime log, or to send short (32 characters) to the status text under the debug node.<br><img src="/2020/04/29/Node-RED/Node-RED-3-Core-Nodes-1/debug-node.png" alt="Debug node"></p>
-</blockquote>
-<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><blockquote>
-<p>A JavaScript function to run against the messages being received by the node.</p>
-<p>The messages are passed in as a JavaScript object called <code>msg</code>.</p>
-<p>By convention it will have a <code>msg.payload</code> property containing the body of the message.</p>
-<p>The function is expected to return a message object (or multiple message objects), but can choose to return nothing in order to halt a flow.</p>
-<p>The <strong>Setup</strong> tab contains code that will be run whenever the node is started. The <strong>Close</strong> tab contains node that will be run whenever the node is stopped.</p>
-<p>If an promise object is returned from the setup node, input message processing starts after its completion.</p>
-<h5 id="Details-1"><a href="#Details-1" class="headerlink" title="Details"></a>Details</h5><p>See the online documentation for more information on writing functions.<br>Sending messages<br>The function can either return the messages it wants to pass on to the next nodes in the flow, or can call <code>node.send(messages)</code>.<br>It can return/send:</p>
+<p><strong>Notice:</strong> you cannot put the input and output node inside the subflows, otherwise, you cannot reuse it as a functionality node.</p>
+<p>If you want to delete the subflow, then double click the subflow and click the delete button<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/delete-subflow.png" alt="delete subflow"></p>
 <ul>
-<li>a single message object - passed to nodes connected to the first output</li>
-<li>an array of message objects - passed to nodes connected to the corresponding outputs</li>
+<li>Selecting nodes from an existing flow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/existing-subflow.gif" alt="existing subflow"></li>
 </ul>
-<p>Note: The setup code is executed during the initialization of nodes. Therefore, if <code>node.send</code> is called in the setup tab, subsequent nodes may not be able to receive the message.<br>If any element of the array is itself an array of messages, multiple messages are sent to the corresponding output.<br>If null is returned, either by itself or as an element of the array, no message is passed on.</p>
-<h6 id="Logging-and-Error-Handling"><a href="#Logging-and-Error-Handling" class="headerlink" title="Logging and Error Handling"></a>Logging and Error Handling</h6><p>To log any information, or report an error, the following functions are available:</p>
-<ul>
-<li><code>node.log("Log message")</code></li>
-<li><code>node.warn("Warning")</code></li>
-<li><code>node.error("Error")</code></li>
-</ul>
-<p>The Catch node can also be used to handle errors. To invoke a Catch node, pass <code>msg</code> as a second argument to <code>node.error</code>.</p>
-<pre class="line-numbers language-none"><code class="language-none">&gt;node.error("Error",msg);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Accessing Node Information<br>In the function block, id and name of the node can be referenced using the following properties:</p>
-<ul>
-<li><code>node.id</code> - id of the node</li>
-<li><code>node.name</code> - name of the node</li>
-</ul>
-<p>Using environment variables<br>Environment variables can be accessed using <code>env.get("MY_ENV_VAR")</code></p>
-</blockquote>
+<p><strong>Notice:</strong> Be careful if you want to change the subflow, because it will affects any flow that’s actually using this subflow not just the one you’re currently working on.</p>
+<h2 id="Difference-between-subflow-and-link-node"><a href="#Difference-between-subflow-and-link-node" class="headerlink" title="Difference between subflow and link node"></a>Difference between subflow and link node</h2><p>There are some differences between subflow and link node.<br>There are two cases about the link node. A link out node wired to link in node in a same tab and a different tab.<br>Condition | Subflow |  Link node(same tab) | Link node(different tab)<br>-|-|-|-<br>Share context.flow | NO | YES |NO|<br>Share context.global | YES | YES |YES|<br>Catch error in caller tab | YES | YES |NO|<br>Node actions(e.g. inject node) | NO | YES |YES|</p>
 
                 
             </div>
@@ -575,7 +524,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/04/29/Node-RED/Node-RED-3-Core-Nodes-1/">http://example.com/2020/04/29/Node-RED/Node-RED-3-Core-Nodes-1/</a>
+                    <a href="http://example.com/2020/04/29/Node-RED/Node-RED-10-Subflows/">http://example.com/2020/04/29/Node-RED/Node-RED-10-Subflows/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -788,13 +737,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/29/Node-RED/Node-RED-4-Core-Nodes-2/">
+                <a href="/2020/04/29/Node-RED/Node-RED-11-Copy-nodes-and-flows/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Node-RED 系列（4）-- Core nodes (Change/Switch/Json)">
+                        <img src="/medias/featureimages/26.jpg" class="responsive-img" alt="Node-RED 系列（11）-- how to copy nodes and flows">
                         
-                        <span class="card-title">Node-RED 系列（4）-- Core nodes (Change/Switch/Json)</span>
+                        <span class="card-title">Node-RED 系列（11）-- how to copy nodes and flows</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -833,13 +782,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
+                <a href="/2020/04/29/Node-RED/Node-RED-9-PM2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
+                        <img src="/medias/featureimages/38.jpg" class="responsive-img" alt="Node-RED 系列（9）-- Using PM2 to keep Node-RED running on Windows">
                         
-                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
+                        <span class="card-title">Node-RED 系列（9）-- Using PM2 to keep Node-RED running on Windows</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
