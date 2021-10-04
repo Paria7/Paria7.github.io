@@ -50,29 +50,6 @@
     
     
     <entry>
-      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
-      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
-      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Book </tag>
-            
-            <tag> English </tag>
-            
-            <tag> The Little Prince </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Chapter1</title>
       <link href="/2021/10/02/Books/English/Animal%20Farm/Chapter1/"/>
       <url>/2021/10/02/Books/English/Animal%20Farm/Chapter1/</url>
@@ -96,6 +73,29 @@
     
     
     <entry>
+      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
+      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
+      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Book </tag>
+            
+            <tag> English </tag>
+            
+            <tag> The Little Prince </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2021/10/02/hello-world/"/>
       <url>/2021/10/02/hello-world/</url>
@@ -103,6 +103,25 @@
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Node-RED 系列（9）-- Using PM2 to keep Node-RED running on Windows</title>
+      <link href="/2020/04/29/Node-RED/Node-RED-9-PM2/"/>
+      <url>/2020/04/29/Node-RED/Node-RED-9-PM2/</url>
+      
+        <content type="html"><![CDATA[<p>#Node-RED running on Windows<br>Once installed, the simple way to run Node-RED is to use the <strong>node-red</strong> command in a command prompt. If you have installed Node-RED as a global npm package, you can use the node-red command:<br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/node-red.png" alt="node-red"><br>This will output the Node-RED log to the terminal. You must keep the terminal open in order to keep Node-RED running.</p><p>#Why using PM2<br>If you are using Windows to develop Node-Red flows or nodes, you may find it helpful to use <strong><a href="https://pm2.keymetrics.io/">PM2</a></strong> to run Node-RED. This can be configured to automatically restart when files change, always keep Node-RED running and manage log output.</p><p>PM2 is a process manager for Node applications with monitoring, load balancing, automatic restart etc.<br>And it’s perfect when you want to take your individual code and use all the CPUs on all the servers and keep the process alive forever.</p><p>#Steps to using PM2 to keep Node-RED running on Windows</p><ol><li><p>Install PM2<br> Execute the following at the command prompt:<br> <code>npm install –g –unsafe-perm pm2</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/install-pm2.png" alt="pm2 install"></p></li><li><p>Install and config pm2-windows-service<br> Execute the following at the command prompt:<br> <code>npm i –g pm2-windows-service</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/install-pm2-windows.png" alt="install pm2 windows service"></p></li><li><p>Add environment variables for PM2<br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/configure-pm2-environment-variable.png" alt="setting environment variable"></p></li><li><p>Install PM2 Service<br> Open command line as administrator and execute below command<br> <code>pm2-service-install</code><br> <em>Tips: choose ‘N’ and continue, and then PM2 service install successfully</em><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-service-install.png" alt="install pm2 service"><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-service.png" alt="pm2 service"></p></li><li><p>Locate the Node-RED red.js File and add it to PM2<br> Execute the following at the command prompt:<br> <code>pm2 start C:\Users\[replace with your user folder]\AppData\Roaming\npm\node_modules\node-red\red.js –n node-red</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-start.png" alt="pm2 start"></p></li><li><p>Save configuration<br> Execute the following at the command prompt:<br> <code>pm2 save</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-save.png" alt="pm2 save"></p></li><li><p>Check status<br> Execute the following at the command prompt:<br> <code>pm2 status</code><br> <code>pm2 info &lt;id or app name&gt;</code><br> <code>pm2 show &lt;id or app name&gt;</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-status.png" alt="pm2 status"></p></li><li><p>Restart pc and check PM2 status<br> <code>pm2 status</code><br><img src="/2020/04/29/Node-RED/Node-RED-9-PM2/pm2-status-restart.png" alt="pm2 status"></p></li></ol><p>That’s all.<br>Hope this can help you!</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Node-RED </tag>
+            
+        </tags>
       
     </entry>
     
