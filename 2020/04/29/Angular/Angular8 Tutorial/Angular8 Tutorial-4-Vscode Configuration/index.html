@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Node-RED 系列（7）-- Initializing Node-RED Flows, Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（四）开发工具配置, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Node-RED 系列（7）-- Initializing Node-RED Flows | Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（四）开发工具配置 | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Node-RED 系列（7）-- Initializing Node-RED Flows</h1>
+                    <h1 class="description center-align post-title">Angular8 实战（四）开发工具配置</h1>
                 </div>
             </div>
         </div>
@@ -436,8 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Node-RED/">
-                                <span class="chip bg-color">Node-RED</span>
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
+                            </a>
+                        
+                            <a href="/tags/Angular8/">
+                                <span class="chip bg-color">Angular8</span>
                             </a>
                         
                     </div>
@@ -461,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    756
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -486,7 +490,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>前端IDE很多，我个人推荐使用<a href="%5Bhttps://code.visualstudio.com/%5D(https://code.visualstudio.com/)">VSCode</a>, 开源、免费、轻量、跨平台等优点，使得越来越多的人选择使用VsCode。<br>###VsCode 界面简介<br>我的VsCode界面是我已经设置过的，刚安装完并不是这样的。但是功能项是不变的。</p>
+<ol>
+<li>显示当前打开的所有文件，当然横着的tab也可以看到，但是多了可能显示不全，所以从这边看打开的页面非常方便</li>
+<li>当前打开的项目文件夹及文件夹中的内容（一般是Angular项目的根目录）</li>
+<li>大纲，显示当前聚焦页面的类、属性、方法等，可快速查找当前页面内容</li>
+<li>时间轴，显示当前聚焦页面的提交记录，若是用了github，azure devops等代码托管即可看出当前文件的所有提交记录</li>
+<li>显示当前项目的npm 脚本</li>
+<li>输出栏，一般调试的时候使用较多</li>
+<li>终端，项目的安装、运行、创建等都在此执行</li>
+<li>调试时会使用，像vs一样，设断点，启动跟踪模式</li>
+<li>打开终端，执行任务等命令</li>
+<li>全文检索，输入关键字，会整个项目文件夹中查找。如果想在当前聚焦的文件查找，则使用3的快速查找。或者快捷键Ctrl+F，调出搜索框</li>
+<li>当前分支下修改的文件。如果是托管代码，可在左下角查看当前代码所在分支</li>
+<li>执行，一般会在debug时使用</li>
+<li>插件集合，可查看已安装的插件，和系统推荐的插件，一键安装。</li>
+<li>设置，打开可设置VsCode主题，字体，样式，自动格式化等等，非常丰富的设置项。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/1.png" alt="image.png"></li>
+</ol>
+<h2 id="常用插件推荐"><a href="#常用插件推荐" class="headerlink" title="常用插件推荐"></a>常用插件推荐</h2><ul>
+<li>Debugger for Chrome<br>顾名思义，debug 代码用的。让 vscode 映射 chrome 的 debug功能，静态页面都可以用 vscode 来打断点调试</li>
+<li>Html css support<br>让 html 标签上写class 智能提示当前项目所支持的样式</li>
+<li>Angular8 Snippets / Html Snippets<br>代码片段提示</li>
+<li>Angular Language service<br>让你能在 Angular 模板内获得自动完成、错误检查、给出提示和内部导航等功能，而不用管这些模板位于外部 HTML 文件中还是内嵌在注解/装饰器的字符串中。 Angular 语言服务会自动检测你要打开的 Angular 文件（从你的 tsconfig.json 中读取），找出应用中所需的所有模板，然后为你打开的这些模板提供语言服务。</li>
+<li>vscode-icons<br>让 vscode 资源树目录加上图标，使用感不错！</li>
+</ul>
+<h2 id="Chrome-开发工具"><a href="#Chrome-开发工具" class="headerlink" title="Chrome 开发工具"></a>Chrome 开发工具</h2><ul>
+<li>前端调试，浏览器推荐Chrome或者Edge。不怎么推荐Firefox，IE等。一般快捷键都是F12可调出开发者模式，前端开发调试时，使用率相当高，可调样式，可看Console输出，可直接Debug，可在network中查看请求（方便调试API），可看performance</li>
+<li>当然Chrome也可像VsCode一样安装插件，方便调试。如：Augury<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/2.png" alt="image.png"></li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -512,7 +544,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/04/29/Node-RED/Node-RED-7-Initializing%20flow/">http://example.com/2020/04/29/Node-RED/Node-RED-7-Initializing%20flow/</a>
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -550,8 +582,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Node-RED/">
-                                    <span class="chip bg-color">Node-RED</span>
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
+                                </a>
+                            
+                                <a href="/tags/Angular8/">
+                                    <span class="chip bg-color">Angular8</span>
                                 </a>
                             
                         </div>
@@ -725,13 +761,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/29/Node-RED/Node-RED-8-Authentication/">
+                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.jpg" class="responsive-img" alt="Node-RED 系列（8）-- Oauth/OpenID based authentication with Id4Flows">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
                         
-                        <span class="card-title">Node-RED 系列（8）-- Oauth/OpenID based authentication with Id4Flows</span>
+                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -770,13 +806,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/Node-RED/Node-RED-6-Core-Nodes-4/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-3-Setup%20environment/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="Node-RED 系列（6）-- Core nodes (Http In/Http Request)">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Angular8 实战（三）环境搭建">
                         
-                        <span class="card-title">Node-RED 系列（6）-- Core nodes (Http In/Http Request)</span>
+                        <span class="card-title">Angular8 实战（三）环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -800,8 +836,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Node-RED/">
-                        <span class="chip bg-color">Node-RED</span>
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
+                    </a>
+                    
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
                     </a>
                     
                 </div>

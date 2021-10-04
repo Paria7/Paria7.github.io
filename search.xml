@@ -289,6 +289,69 @@
     
     
     <entry>
+      <title>Angular8 实战（四）开发工具配置</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/</url>
+      
+        <content type="html"><![CDATA[<p>前端IDE很多，我个人推荐使用<a href="%5Bhttps://code.visualstudio.com/%5D(https://code.visualstudio.com/)">VSCode</a>, 开源、免费、轻量、跨平台等优点，使得越来越多的人选择使用VsCode。<br>###VsCode 界面简介<br>我的VsCode界面是我已经设置过的，刚安装完并不是这样的。但是功能项是不变的。</p><ol><li>显示当前打开的所有文件，当然横着的tab也可以看到，但是多了可能显示不全，所以从这边看打开的页面非常方便</li><li>当前打开的项目文件夹及文件夹中的内容（一般是Angular项目的根目录）</li><li>大纲，显示当前聚焦页面的类、属性、方法等，可快速查找当前页面内容</li><li>时间轴，显示当前聚焦页面的提交记录，若是用了github，azure devops等代码托管即可看出当前文件的所有提交记录</li><li>显示当前项目的npm 脚本</li><li>输出栏，一般调试的时候使用较多</li><li>终端，项目的安装、运行、创建等都在此执行</li><li>调试时会使用，像vs一样，设断点，启动跟踪模式</li><li>打开终端，执行任务等命令</li><li>全文检索，输入关键字，会整个项目文件夹中查找。如果想在当前聚焦的文件查找，则使用3的快速查找。或者快捷键Ctrl+F，调出搜索框</li><li>当前分支下修改的文件。如果是托管代码，可在左下角查看当前代码所在分支</li><li>执行，一般会在debug时使用</li><li>插件集合，可查看已安装的插件，和系统推荐的插件，一键安装。</li><li>设置，打开可设置VsCode主题，字体，样式，自动格式化等等，非常丰富的设置项。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/1.png" alt="image.png"></li></ol><h2 id="常用插件推荐"><a href="#常用插件推荐" class="headerlink" title="常用插件推荐"></a>常用插件推荐</h2><ul><li>Debugger for Chrome<br>顾名思义，debug 代码用的。让 vscode 映射 chrome 的 debug功能，静态页面都可以用 vscode 来打断点调试</li><li>Html css support<br>让 html 标签上写class 智能提示当前项目所支持的样式</li><li>Angular8 Snippets / Html Snippets<br>代码片段提示</li><li>Angular Language service<br>让你能在 Angular 模板内获得自动完成、错误检查、给出提示和内部导航等功能，而不用管这些模板位于外部 HTML 文件中还是内嵌在注解/装饰器的字符串中。 Angular 语言服务会自动检测你要打开的 Angular 文件（从你的 tsconfig.json 中读取），找出应用中所需的所有模板，然后为你打开的这些模板提供语言服务。</li><li>vscode-icons<br>让 vscode 资源树目录加上图标，使用感不错！</li></ul><h2 id="Chrome-开发工具"><a href="#Chrome-开发工具" class="headerlink" title="Chrome 开发工具"></a>Chrome 开发工具</h2><ul><li>前端调试，浏览器推荐Chrome或者Edge。不怎么推荐Firefox，IE等。一般快捷键都是F12可调出开发者模式，前端开发调试时，使用率相当高，可调样式，可看Console输出，可直接Debug，可在network中查看请求（方便调试API），可看performance</li><li>当然Chrome也可像VsCode一样安装插件，方便调试。如：Augury<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-4-Vscode%20Configuration/2.png" alt="image.png"></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Angular8 实战（三）环境搭建</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-3-Setup%20environment/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-3-Setup%20environment/</url>
+      
+        <content type="html"><![CDATA[<p>Angular 环境搭建：<br>Node &gt;&gt; NPM/CNPM &gt;&gt; Angular CLI</p><h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><a href="https://nodejs.org/en/download/">Node.js</a></h2><ul><li>安装node.js的目的是使用npm管理项目依赖的软件包(简单理解就是项目依赖的类库)<h2 id="NPM-CNPM"><a href="#NPM-CNPM" class="headerlink" title="NPM/CNPM"></a>NPM/CNPM</h2></li><li>传统项目依赖的软件包，通常是先下载到本地，再引用到项目中。而这其中就有问题，比如：项目依赖A,B,C 三个软件包，但是B又依赖 E,F 两个软件包，E 又依赖的M,N两个软件包，这就导致我们的维护工作非常的不便。再者，之后的升级工作也会非常的繁琐。</li><li>而NPM 提供了一个很好的方式，我们只需要在配置文件中配置我们所需要的软件包，NPM会统一从中心站点下载所需的软件依赖包安装到本地，并且NPM会自己处理好软件包各自的依赖项。*(中心站点指的是npm 软件包会一般会统一上传到一个中心站点，方便其他人下载使用)*</li><li>CNPM，由于网络环境等原因，NPM 一般访问速度会很慢。为了解决这个问题，CNPM作为替代的包管理工具就出现了。CNPM是淘宝团队针对NPM中心站点在大陆做的一个镜像。使用CNPM 可以快速安装依赖包，提升开发体验。就个人而言，建议大家能用NPM的情况下尽量使用NPM。因为CNPM可能会安装到版本较旧的包，引发一些诡异的错误。<h2 id="Angular-CLI"><a href="#Angular-CLI" class="headerlink" title="Angular CLI"></a>Angular CLI</h2></li><li>Angular CLI 简称脚手架，其实是一个命令行工具。使用Angular CLI 使我们无须理会复杂的配置，更专注Angular。这其实是前端的一个趋势，比如React，React也有自己的命令行工具；Vue，Vue也有Vue CLI 都是相同的思路，屏蔽掉复杂的配置，着重在框架本身。</li></ul><h2 id="简单安装步骤"><a href="#简单安装步骤" class="headerlink" title="简单安装步骤"></a>简单安装步骤</h2><ul><li><p>Node.js &amp; npm<br><em>1. Nodejs官网下载LTS版本，双击安装，全部Next，直到安装成功</em><br><em>2. 运行cmd, 输入node-v 确认nodejs 版本；输入npm -v 确认npm 版本</em><br><em>3. 配置npm 和 nodejs 环境变量</em><br><em>4. 配置源地址</em></p></li><li><p>Typescript<br><em>1. 运行cmd, 输入npm install -g typescript</em><br><em>2. 输入tsc -v查看typescript 版本</em></p></li><li><p>Angular CLI<br><em>1. 运行cmd, 输入npm install -g @angular/cli，如果需要指定版本，则如：npm install -g @angular/<a href="mailto:cli@8.3.12">cli@8.3.12</a></em><br><em>2. 输入ng –version查看Angular CLI安装版本</em></p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Angular8 实战（二）Angular基础框架</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-2-Angular%20Framework/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-2-Angular%20Framework/</url>
+      
+        <content type="html"><![CDATA[<p>一张图说明Angular的基础框架，下面是一些重要的点：</p><ol><li>组件作为最小渲染单元，组件的模板可以进行事件绑定和处理，这个操作是在组件类种完成；同样组件中的属性可以通过指令绑定到组件模板中，使得组件模板中有更多的功能</li><li>逻辑处理一般封装在服务中，组件通过依赖注入去使用服务</li><li>模块作为Angular中最小的功能架构组织，这个模块中有自己的服务、指令、组件等<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-2-Angular%20Framework/1.png" alt="image.png"></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Angular8 实战（一）为什么选择Angular？</title>
       <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/"/>
       <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-1-Why%20Angular/</url>
