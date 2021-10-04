@@ -497,7 +497,41 @@
 <li>Selecting nodes from an existing flow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/existing-subflow.gif" alt="existing subflow"></li>
 </ul>
 <p><strong>Notice:</strong> Be careful if you want to change the subflow, because it will affects any flow that’s actually using this subflow not just the one you’re currently working on.</p>
-<h2 id="Difference-between-subflow-and-link-node"><a href="#Difference-between-subflow-and-link-node" class="headerlink" title="Difference between subflow and link node"></a>Difference between subflow and link node</h2><p>There are some differences between subflow and link node.<br>There are two cases about the link node. A link out node wired to link in node in a same tab and a different tab.<br>| Condition | Subflow |  Link node(same tab) | Link node(different tab) |<br>| :——— | :——- | :——– | :——- |<br>| Share context.flow  | NO  | YES    |    No        |<br>| Share context.global | YES | YES | YES |<br>| Catch error in caller tab | YES | YES | NO |<br>| Node actions(e.g. inject node) | NO | YES | YES |</p>
+<h2 id="Difference-between-subflow-and-link-node"><a href="#Difference-between-subflow-and-link-node" class="headerlink" title="Difference between subflow and link node"></a>Difference between subflow and link node</h2><p>There are some differences between subflow and link node.<br>There are two cases about the link node. A link out node wired to link in node in a same tab and a different tab.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Condition</th>
+<th align="left">Subflow</th>
+<th align="left">Link node(same tab)</th>
+<th align="left">Link node(different tab)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Share context.flow</td>
+<td align="left">NO</td>
+<td align="left">YES</td>
+<td align="left">No</td>
+</tr>
+<tr>
+<td align="left">Share context.global</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+<tr>
+<td align="left">Catch error in caller tab</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+<td align="left">NO</td>
+</tr>
+<tr>
+<td align="left">Node actions(e.g. inject node)</td>
+<td align="left">NO</td>
+<td align="left">YES</td>
+<td align="left">YES</td>
+</tr>
+</tbody></table>
 
                 
             </div>
