@@ -520,8 +520,8 @@
 <li>数据绑定Angular8 实战（七）【初识组件】顶部TabBar，就是模板的各个部分与控制器的各个部分相互作用的一个机制。我们在模板种添加绑定标记，如何把二者关联起来Angular8 实战（七）【初识组件】顶部TabBar是最常见的将控制器的值绑定到模板种的绑定方法，叫差值表达式。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-7-Component/4.png" alt="image.png"></li>
 <li>Angular 中数据文本绑定、绑定Html、绑定属性、双向数据绑定的实现方式<ul>
 <li>数据文本绑定，使用<code>{{}}`
-         在组件类中声明属性 `public test1="测试数据文本绑定";` ，然后在模板中绑定属性`{{test1}}</code></li>
-<li>绑定Html，可以使用绑定属性的方式，给div绑定innerHTML属性<br> 在组件类中声明属性<code>public test2="&lt;h2&gt;用h2标签来测试绑定Html&lt;/h2&gt;"</code>，然后在模板中通过<code>[]</code>绑定，如：<code>&lt;div innerHTML="test2"&gt;&lt;/div&gt;</code></li>
+         在组件类中声明属性  `public test1="测试数据文本绑定";` ，然后在模板中绑定属性  `{{test1}}</code></li>
+<li>绑定Html，可以使用绑定属性的方式，给div绑定innerHTML属性<br> 在组件类中声明属性  <code>public test2="&lt;h2&gt;用h2标签来测试绑定Html&lt;/h2&gt;"</code>，然后在模板中通过<code>[]</code>  绑定，如：  <code>&lt;div innerHTML="test2"&gt;&lt;/div&gt;</code></li>
 <li>属性绑定，上面可知使用[]来绑定元素的属性<br>在组件类中声明属性<pre class="line-numbers language-none"><code class="language-none">public id="testId"; 
 public title="test title"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 在模板中通过[]绑定<br><code>&lt;div [id]="id" [title]="title"&gt;测试属性绑定&lt;/div&gt;</code></li>
