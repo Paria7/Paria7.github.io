@@ -28,6 +28,29 @@
     
     <entry>
       <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
+      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/"/>
+      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Book </tag>
+            
+            <tag> English </tag>
+            
+            <tag> The Little Prince </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
       <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
       <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
       
@@ -73,29 +96,6 @@
     
     
     <entry>
-      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
-      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/"/>
-      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Book </tag>
-            
-            <tag> English </tag>
-            
-            <tag> The Little Prince </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2021/10/02/hello-world/"/>
       <url>/2021/10/02/hello-world/</url>
@@ -132,7 +132,7 @@
       <link href="/2020/04/29/Node-RED/Node-RED-10-Subflows/"/>
       <url>/2020/04/29/Node-RED/Node-RED-10-Subflows/</url>
       
-        <content type="html"><![CDATA[<p>In this article, we will learn about how to create and use Node-RED subflows.<br>A subflow is a collection of connected nodes that can be used as a single unit just like a node.<br>It is a way of packaging functionality from several nodes into a single node.</p><h2 id="Creating-Subflows"><a href="#Creating-Subflows" class="headerlink" title="Creating Subflows"></a>Creating Subflows</h2><p>You can create a subflow in two ways:</p><ul><li>An empty subflow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/create-empty-subflow.png" alt="create an empty subflow"></li></ul><p><strong>Notice:</strong> you cannot put the input and output node inside the subflows, otherwise, you cannot reuse it as a functionality node.</p><p>If you want to delete the subflow, then double click the subflow and click the delete button<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/delete-subflow.png" alt="delete subflow"></p><ul><li>Selecting nodes from an existing flow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/existing-subflow.gif" alt="existing subflow"></li></ul><p><strong>Notice:</strong> Be careful if you want to change the subflow, because it will affects any flow that’s actually using this subflow not just the one you’re currently working on.</p><h2 id="Difference-between-subflow-and-link-node"><a href="#Difference-between-subflow-and-link-node" class="headerlink" title="Difference between subflow and link node"></a>Difference between subflow and link node</h2><p>There are some differences between subflow and link node.<br>There are two cases about the link node. A link out node wired to link in node in a same tab and a different tab.<br>Condition | Subflow |  Link node(same tab) | Link node(different tab)<br>-|-|-|-<br>Share context.flow | NO | YES |NO|<br>Share context.global | YES | YES |YES|<br>Catch error in caller tab | YES | YES |NO|<br>Node actions(e.g. inject node) | NO | YES |YES|</p>]]></content>
+        <content type="html"><![CDATA[<p>In this article, we will learn about how to create and use Node-RED subflows.<br>A subflow is a collection of connected nodes that can be used as a single unit just like a node.<br>It is a way of packaging functionality from several nodes into a single node.</p><h2 id="Creating-Subflows"><a href="#Creating-Subflows" class="headerlink" title="Creating Subflows"></a>Creating Subflows</h2><p>You can create a subflow in two ways:</p><ul><li>An empty subflow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/create-empty-subflow.png" alt="create an empty subflow"></li></ul><p><strong>Notice:</strong> you cannot put the input and output node inside the subflows, otherwise, you cannot reuse it as a functionality node.</p><p>If you want to delete the subflow, then double click the subflow and click the delete button<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/delete-subflow.png" alt="delete subflow"></p><ul><li>Selecting nodes from an existing flow<br><img src="/2020/04/29/Node-RED/Node-RED-10-Subflows/existing-subflow.gif" alt="existing subflow"></li></ul><p><strong>Notice:</strong> Be careful if you want to change the subflow, because it will affects any flow that’s actually using this subflow not just the one you’re currently working on.</p><h2 id="Difference-between-subflow-and-link-node"><a href="#Difference-between-subflow-and-link-node" class="headerlink" title="Difference between subflow and link node"></a>Difference between subflow and link node</h2><p>There are some differences between subflow and link node.<br>There are two cases about the link node. A link out node wired to link in node in a same tab and a different tab.<br>| Condition | Subflow |  Link node(same tab) | Link node(different tab) |<br>| - | - | - | - |<br>| Share context.flow | NO | YES | NO |<br>| Share context.global | YES | YES | YES |<br>| Catch error in caller tab | YES | YES | NO |<br>| Node actions(e.g. inject node) | NO | YES | YES |</p>]]></content>
       
       
       
