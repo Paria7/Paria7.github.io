@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Node-RED 系列（5）-- Core nodes (Template/Split/Join), Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（六）工程源码文件结构, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Node-RED 系列（5）-- Core nodes (Template/Split/Join) | Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（六）工程源码文件结构 | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Node-RED 系列（5）-- Core nodes (Template/Split/Join)</h1>
+                    <h1 class="description center-align post-title">Angular8 实战（六）工程源码文件结构</h1>
                 </div>
             </div>
         </div>
@@ -436,8 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Node-RED/">
-                                <span class="chip bg-color">Node-RED</span>
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
+                            </a>
+                        
+                            <a href="/tags/Angular8/">
+                                <span class="chip bg-color">Angular8</span>
                             </a>
                         
                     </div>
@@ -461,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    771
+                    204
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    4 Min
+                    1 Min
                 </div>
                 
 
@@ -486,77 +490,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h2><p>The Template node can be used to generated text using a message’s properties to fill out a template.</p>
-<p>It use the <a target="_blank" rel="noopener" href="https://mustache.github.io/mustache.5.html">Mustache</a> templating language to generate the result.</p>
-<p>For example, a template of:</p>
-<pre class="line-numbers language-none"><code class="language-none">This is the payload: {{payload}} !<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>Will replace <code>{{payload}}</code> with the value of the message’s <code>payload</code> property.</p>
-<p>By default, Mustache will replace certain characters with their HTML escape codes. To stop that happening, you can use triple braces: <code>{{{payload}}}</code>.</p>
-<p>Mustache supports simple loops on lists. For example, If <code>msg.payload</code> contains an array of name, such as: <code>["Tom", "Jack", "Tony"]</code>, the following template will create an HTML list of the names:</p>
-<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
-{{#payload}}
-  &lt;li&gt;{{.}}&lt;/li&gt;
-{{/payload}}
-&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
-  &lt;li&gt;Tom&lt;/li&gt;
-  &lt;li&gt;Jack&lt;/li&gt;
-  &lt;li&gt;Tony&lt;/li&gt;
-&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>The node will set the configured message or context property with the result of the template. If the template generates the valid JSON or YAML content, it can be configured to parse the result to the corresponding JavaScript object.</p>
-<p><em>Usage examples:</em></p>
-<p><em>Source</em></p>
-<h2 id="Split"><a href="#Split" class="headerlink" title="Split"></a>Split</h2><p>Split a message into a sequence of messages.</p>
-<p><strong>Inputs</strong></p>
-<div><font color="#FF0000">payload</font></div>
-The behavior of the node is determined by the type of ```msg.payload```:
-- **string/buffer** - the message is split using specified character (default: ```\n```), buffer sequence or into fixed lengths.
-- **array** - the message is split into either individual array elements, or arrays of a fixed-length.
-- **object** - a message is sent for each key/value pair of the object.
-
-<p><strong>Outputs</strong></p>
-<div><font color="#FF0000">parts</font></div>
-This property contains information about how the message was split from the original message. If passed to the **Join** node, the sequence can be reassembled into a single message. The property has the following properties:
-- ```id``` - an identifier for the group of messages
-- ```index``` - the position of the group
-- ```count``` - if know, the total number of messages in the group. See 'streaming mode' below.
-- ```type``` - the type of message - string/array/object/buffer
-- ```ch``` - for a string or buffer, the data used to split the message as either the string or an array of bytes
-- ```key``` - for an object, the key of the property this message was created from. The node can be configured to also copy this value to another message properties, such as ```msg.topic```
-- ```len``` - the length of each message when split using a fixed length value
-
-<p>This node makes it easy to create a flow that performs common actions across a sequence of messages before, using the <strong>join</strong> node, recombining the sequence into a single message.</p>
-<p>It uses the <code>msg.parts</code> property to track the individual parts of a sequence.</p>
-<p><strong>Streaming mode</strong><br>The node can also be used to reflow a stream of messages. For example, a serial device that sends newline-terminated commands may deliver a single message with a partial command as its end. In ‘Streaming mode’, this node will split a message and send each complete segment. If there is a partial segment at the end, the node will hold on to it and prepend it to the next message that is received.</p>
-<p>When operating in this mode, the node will not set the <code>msg.parts.count</code> property as it does not know how many messages to expect in the stream. This means it cannot be used with the <strong>join</strong> node in its automatic mode.</p>
-<p><em>Usage examples:</em></p>
-<p><em>Source</em></p>
-<h2 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h2><p>Joins sequences of messages into a single message.<br>There are three modes available:</p>
+                <p>本章讲解src源码文件结构</p>
 <ul>
-<li><p><strong>automatic</strong><br>When paired with the <strong>split</strong> node, it will automatically join the messages to reverse the split that was performed.</p>
-</li>
-<li><p><strong>manual</strong><br>Join sequences of message in a variety of ways.</p>
-</li>
-<li><p><strong>reduce sequence</strong><br>Apply an expression against all messages in a sequence to reduce it to a single message.</p>
-</li>
+<li>src      //源代码目录</li>
+<li>app      //工程源码目录 之后主要工作的目录，添加其它模块、组件等<ul>
+<li>app.component.css             //根模块样式文件</li>
+<li>app.component.html            //根组件模板文件</li>
+<li>app.component.ts                //根组件类文件</li>
+<li>app.component.spec.ts       //根组件测试文件</li>
+<li>app.module.ts       //根模块</li>
 </ul>
-<p><strong>Inputs</strong></p>
-<div><font color="#FF0000">parts</font></div>
-To automatically join a sequence of messages, they should all have this property set. The **split** node generates this property but it can be manually created. It has the following properties:
-- ```id``` - an identifier for the group of messages
-- ```index``` - the position within the goup
-- ```count``` - the total number of messages in the group
-- ```type``` - the type of message - string/array/object/buffer
-- ```ch``` - for a string or buffer, the data used to split the message as either the string or an array of bytes
-- ```key``` - for an object, the key of the property this message was created from
-- ```len``` - the length of each message when split using a fixed length value
-
-<div><font color="#FF0000">complete</font></div>
-If set, the node will append the payload, and then send the output message in its current state. If you don't wish to append the payload, delete it from the msg.
-
-<p><em>Usage examples:</em></p>
-<p><em>Source</em></p>
+</li>
+<li>assets      //资源目录，包含图片，资源文件等</li>
+<li>environments        //环境配置<ul>
+<li>environment.ts      //开发环境，当执行<code>ng build</code>时，使用开发环境配置</li>
+<li>environment.prod.ts      //生产环境，当执行<code>ng build --prod</code>时，使用生产环境配置</li>
+</ul>
+</li>
+<li>favicon.ico      //收藏图标</li>
+<li>index.html      //单页应用的宿主HTML</li>
+<li>main.ts      //入口ts文件</li>
+<li>polyfills.ts      //用于不同浏览器的兼容脚本加载</li>
+<li>styless.css      //整个项目的全局css</li>
+<li>test.ts      //测试入口<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-6-Angular%20project%20structure/1.png" alt="image.png"></li>
+</ul>
 
                 
             </div>
@@ -583,7 +540,7 @@ If set, the node will append the payload, and then send the output message in it
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/04/29/Node-RED/Node-RED-5-Core-Nodes-3/">http://example.com/2020/04/29/Node-RED/Node-RED-5-Core-Nodes-3/</a>
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-6-Angular%20project%20structure/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-6-Angular%20project%20structure/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -621,8 +578,12 @@ If set, the node will append the payload, and then send the output message in it
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Node-RED/">
-                                    <span class="chip bg-color">Node-RED</span>
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
+                                </a>
+                            
+                                <a href="/tags/Angular8/">
+                                    <span class="chip bg-color">Angular8</span>
                                 </a>
                             
                         </div>
@@ -796,13 +757,13 @@ If set, the node will append the payload, and then send the output message in it
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/29/Node-RED/Node-RED-6-Core-Nodes-4/">
+                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/37.jpg" class="responsive-img" alt="Node-RED 系列（6）-- Core nodes (Http In/Http Request)">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
                         
-                        <span class="card-title">Node-RED 系列（6）-- Core nodes (Http In/Http Request)</span>
+                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -841,13 +802,13 @@ If set, the node will append the payload, and then send the output message in it
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/29/Node-RED/Node-RED-4-Core-Nodes-2/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-5-Angular%20Cli/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Node-RED 系列（4）-- Core nodes (Change/Switch/Json)">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Angular8 实战（五）CLI 工程结构">
                         
-                        <span class="card-title">Node-RED 系列（4）-- Core nodes (Change/Switch/Json)</span>
+                        <span class="card-title">Angular8 实战（五）CLI 工程结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -871,8 +832,12 @@ If set, the node will append the payload, and then send the output message in it
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Node-RED/">
-                        <span class="chip bg-color">Node-RED</span>
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
+                    </a>
+                    
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
                     </a>
                     
                 </div>
