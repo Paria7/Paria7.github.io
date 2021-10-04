@@ -461,14 +461,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    536
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    3 Min
                 </div>
                 
 
@@ -486,7 +486,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="Http-In"><a href="#Http-In" class="headerlink" title="Http In"></a>Http In</h2><p>Creates an HTTP end-point for creating web services.</p>
+<p><strong>Outputs</strong></p>
+<div><font color="#FF0000">payload</font></div>
+For a GET request, contains an object of any query string parameters. Otherwise, contains the body of the HTTP request.
+
+<div><font color="#FF0000">req</font></div>
+An HTTP request object. This object contains multiple properties that provide information about the request.
+- ```body``` - the body of the incoming request. The format will depend on the request.
+- ```headers``` - an object containing the HTTP request headers. 
+- ```params``` - an object containing any route parameters. 
+- ```cookies``` - an object containing the cookies for the request. 
+- ```files``` - if enabled within the node, an object containing any files uploaded as part of a POST request. 
+
+
+<div><font color="#FF0000">res</font></div>
+An HTTP response object. This property should not be used directly; the ```HTTP Response``` node documents how to respond to a request. This property must remain attached to the message passed to response node.
+
+
+<p>The node will listen on the configured path for requests of a particular type. The path can be fully specified, such as <code>user/</code>, or include named parameters that accept any value, such as <code>/user/:name</code>. When named parameters are used, their actual value in a request can be accessed under <code>msg.req.params</code>.</p>
+<p>For request that include a body, such as a POST or PUT, the contents of the request is made available as <code>msg.payload</code>.</p>
+<p>If the content type of the request can be determined, the body will be parsed to any appropriate type. For example, <code>application/json</code> will be parsed to its JavaScript object representation.</p>
+<p><strong>Note:</strong> this node does not send any response to the request. The follow must include an HTTP Response node to complete the request.</p>
+<p><em>Usage example:</em><br><em>Source:</em></p>
+<h2 id="Http-Request"><a href="#Http-Request" class="headerlink" title="Http Request"></a>Http Request</h2><p>Sends HTTP requests and returns the response.</p>
+<p><strong>Inputs</strong></p>
+<div><font color="#FF0000">url</font></div>
+If not configured in the node, this optional property sets the url of the request.
+
+<div><font color="#FF0000">method</font></div>
+If not configured in the node, this optional property sets the HTTP method of the request. Must be one of ```GET```, ```PUT```, ```POST```, ```PATCH``` or ```DELETE```.
+
+<div><font color="#FF0000">headers</font></div>
+Sets the HTTP headers of the request.
+
+<div><font color="#FF0000">cookies</font></div>
+If set, can be used to send cookies with the request.
+
+<div><font color="#FF0000">payload</font></div>
+Sent as the body of the request.
+
+<div><font color="#FF0000">rejectUnauthorized</font></div>
+If set to ```false```, allows requests to be made to https sites that use self signed certificates.
+
+<div><font color="#FF0000">followRedirects</font></div>
+If set to ```false``` prevent following Redirect(HTTP 301). ```true``` by default.
+
+<div><font color="#FF0000">requestTimeout</font></div>
+If set to a positive number of milliseconds, will override the globally set ```httpRequestTimeout``` parameter.
+
+
+<p><strong>Outputs</strong></p>
+<div><font color="#FF0000">payload</font></div>
+The body of the response. The node can be configured to return the body as a string, attempt to parse it as a JSON string or leave it as a binary buffer.
+
+<div><font color="#FF0000">statusCode</font></div>
+The status code of the response, or the error code if the request could not be completed.
+
+<div><font color="#FF0000">headers</font></div>
+An object containing the response headers.
+
+<div><font color="#FF0000">responseUrl</font></div>
+In case any redirects occurred while processing the request, this property is the final redirected url. Otherwise, the url of the original request.
+
+<div><font color="#FF0000">responseCookies</font></div>
+If the response includes cookies, this property is an object of name/value pairs for each cookie.
+
+<div><font color="#FF0000">redirectList</font></div>
+If the request was redirected one or more times, the accumulated information will be added to this property. 'location' is the next destination. 'cookies' is the cookies returned from the redirect souce.
+
+<p><em>Usage example:</em><br><em>Source:</em></p>
+
                 
             </div>
             <hr/>
@@ -999,7 +1069,7 @@
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                             class="white-color">
-                                            3.4k
+                                            3.9k
                                         </span>&nbsp;字
                                         
                                             
