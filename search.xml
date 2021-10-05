@@ -17,29 +17,6 @@
     
     
     <entry>
-      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
-      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
-      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Book </tag>
-            
-            <tag> English </tag>
-            
-            <tag> The Little Prince </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Chapter1</title>
       <link href="/2021/10/02/Books/English/Animal%20Farm/Chapter1/"/>
       <url>/2021/10/02/Books/English/Animal%20Farm/Chapter1/</url>
@@ -55,6 +32,29 @@
             <tag> English </tag>
             
             <tag> Animal Farm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</title>
+      <link href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/"/>
+      <url>/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Book </tag>
+            
+            <tag> English </tag>
+            
+            <tag> The Little Prince </tag>
             
         </tags>
       
@@ -281,6 +281,27 @@
         <tags>
             
             <tag> Node-RED </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Angular8 实战（十六）在模板中引用多个元素</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-16-ViewChild/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-16-ViewChild/</url>
+      
+        <content type="html"><![CDATA[<p>上一章学习了在组件类中通过ViewChild去引用模板中的元素，是通过引用名引用的。但是ViewChild不只可以指定引用名引用，也可以指定组件类型来引用。</p><h2 id="ViewChild"><a href="#ViewChild" class="headerlink" title="@ViewChild"></a>@ViewChild</h2><p>比如引用image-slider组件，那么使用方法如下：</p><pre class="line-numbers language-none"><code class="language-none">&lt;app-image-slider [sliders]="imageSliders"&gt;&lt;/app-image-slider&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">@ViewChild('ImageSliderComponent', { static: true }) imageSlider: ImageSliderComponent;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>所以，如果想引用模板中的Angular组件，@ViewChild中，可以使用引用名，也可以使用组件类型。</p><h2 id="ViewChildren"><a href="#ViewChildren" class="headerlink" title="@ViewChildren"></a>@ViewChildren</h2><p>上面说的是单个模板的引用，如果想引用多个模板元素该如何处理呢？<br>比如，想选中image-slider中所有的轮播图图片，如果继续使用<code>@ViewChild</code>，那么对于相同命名的，ViewChild只会选中<code>ngFor</code>中的第一个元素，并不会选中整个img元素。这就引出了<code>@ViewChildren</code>可以选中整个img数组。</p><pre class="line-numbers language-none"><code class="language-none">&lt;img #img *ngFor="let slider of sliders" [src]="slider.imgUrl" [alt]="slider.caption"&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">@ViewChildren('img') imgs: QueryList&lt;ElementRef&gt;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>所以，可以使用<code>@ViewChildren</code>，在<code>@ViewChildren</code>中可以使用引用名或者使用Angular组件/指令的类型。声明类型为<code>QueryList&lt;?&gt;</code></p><p>打印出imgs看一下效果：<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-16-ViewChild/1.gif" alt="16-1.gif"></p><p>可以看出这个时候并没有打印出imgs属性，为什么呢？这就用到前面学习的知识了：组件的生命周期。<br>ngOnInit的时候，视图并没有初始化完成。ngAfterViewInit是视图初始化完成。<br>再来看一下效果：<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-16-ViewChild/2.gif" alt="16-2.gif"></p><h2 id="Renderer2"><a href="#Renderer2" class="headerlink" title="Renderer2"></a>Renderer2</h2><p>之前讲过，Angular是不推荐直接操作DOM的。那么Angular推荐使用什么呢？<br>没错，推荐使用Renderer2。<br>先来看一下用法示例<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-16-ViewChild/3.gif" alt="16-3.gif"></p><p>那么问题来了，为什么我们要这样用呢？直接写不好吗？<br>解释一下：如果直接操作DOM，即自己写html节点，可能会造成XSS攻击。比如我们的应用是允许用户自己写一段Html代码传到组件类中，这个时候你不确定用户是否是恶意写入的攻击代码，这其实就属于XSS攻击。<br>Renderer2是渲染器，默认情况下，Angular会把模板渲染成DOM，同时会检查恶意代码的注入。</p><p><strong>总结</strong><br>@ViewChild用来在类中引用模板中的视图节点，既可以是Angular组件，也可以是HTML元素<br>在AfterViewInit中可以安全的使用@ViewChild引用的元素<br>推荐使用Renderer2操作DOM元素</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
             
         </tags>
       
