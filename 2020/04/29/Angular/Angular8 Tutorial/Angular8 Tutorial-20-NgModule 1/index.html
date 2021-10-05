@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（二十）模块的划分, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（二十）模块的划分 | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Angular8 实战（二十）模块的划分</h1>
                 </div>
             </div>
         </div>
@@ -434,9 +434,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
+                            </a>
+                        
+                            <a href="/tags/Angular8/">
+                                <span class="chip bg-color">Angular8</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -448,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-10-05
+                    2020-04-29
                 </div>
                 
 
@@ -457,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    388
                 </div>
                 
 
@@ -482,7 +490,36 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>本章学习模块的划分</p>
+<p>先来看一下<strong>模块中的“坑”</strong></p>
+<p><strong>导入其它模块时，需要知道使用该模块的目的</strong></p>
+<ul>
+<li>如果是组件，那么需要在每一个需要的模块都进行导入</li>
+<li>如果是服务，那么一般来说在根模块中导入一次即可</li>
+</ul>
+<p><strong>需要在每个需要的模块中进行导入</strong></p>
+<ul>
+<li>CommonModule：提供绑定、<em>ngIf和</em>ngFor等基础指令，基本上每个模块都需要导入它。</li>
+<li>FormsModule / ReactiveFormsModule：表单模块需要在每个需要的模块导入</li>
+<li>提供组件、指令或管道的模块</li>
+</ul>
+<p><strong>只在根模块导入一次的</strong></p>
+<ul>
+<li>HttpClientModule / BrowserAnimationsModule / NoopAnimationsModule</li>
+<li>只提供服务的模块</li>
+</ul>
+<h2 id="如何有效的组织模块"><a href="#如何有效的组织模块" class="headerlink" title="如何有效的组织模块"></a>如何有效的组织模块</h2><p><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-20-NgModule%201/1.png" alt="20-1.png"></p>
+<p><strong>共享模块（SharedModule）</strong></p>
+<blockquote>
+<p>=两个模块需要使用同一个组件、指令、管道，那么在SharedModule导入、导出此组件、指令、管道。这样其它模块只需导入SharedModule即可</p>
+</blockquote>
+<p><strong>根模块</strong><br>导入系统级需要的服务</p>
+<p><strong>模块及路由</strong><br>模块由组件、指令、管道、服务等构成，每个模块也会对应一个路由模块（路由后期会详细讲解），同时还有一个根路由模块。这样划分的好处是：实现懒加载，提高系统渲染性能</p>
+<p>接下来，示例一下功能模块的划分：首页、推荐、分类、聊天、个人中心、产品<br>创建模块的命令</p>
+<pre class="line-numbers language-none"><code class="language-none">ng g m [模块名] --routing<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-20-NgModule%201/2.gif" alt="20-2.gif"></p>
+<p>这样所有的模块都创建完成，而且每个模块有自己独立的目录。</p>
+
                 
             </div>
             <hr/>
@@ -508,7 +545,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/05/Angular/Angular8%20Tutorial/Angular8%20Tutorial-19-NgModule/">http://example.com/2021/10/05/Angular/Angular8%20Tutorial/Angular8%20Tutorial-19-NgModule/</a>
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-20-NgModule%201/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-20-NgModule%201/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -545,7 +582,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
+                                </a>
+                            
+                                <a href="/tags/Angular8/">
+                                    <span class="chip bg-color">Angular8</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -713,18 +758,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/10/05/Angular/Angular8%20Tutorial/Angular8%20Tutorial-19-NgModule/">
+                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -734,9 +778,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -745,7 +789,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Node-RED/">
+                        <span class="chip bg-color">Node-RED</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -756,13 +807,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/02/test/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-19-NgModule/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Angular8 实战（十九）模块的概念">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">Angular8 实战（十九）模块的概念</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -773,7 +824,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                             </span>
                         <span class="publish-author">
                             
@@ -782,6 +833,18 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
+                    </a>
+                    
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -985,7 +1048,7 @@
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                                             class="white-color">
-                                            18k
+                                            19k
                                         </span>&nbsp;字
                                         
                                             
