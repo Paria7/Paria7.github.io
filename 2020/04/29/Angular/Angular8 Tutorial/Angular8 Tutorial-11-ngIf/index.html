@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups, Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（十一）【ngIf 指令 组件的输入输出】组件的输入和输出属性, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups | Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（十一）【ngIf 指令 组件的输入输出】组件的输入和输出属性 | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</h1>
+                    <h1 class="description center-align post-title">Angular8 实战（十一）【ngIf 指令 组件的输入输出】组件的输入和输出属性</h1>
                 </div>
             </div>
         </div>
@@ -436,16 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Book/">
-                                <span class="chip bg-color">Book</span>
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
                             </a>
                         
-                            <a href="/tags/English/">
-                                <span class="chip bg-color">English</span>
-                            </a>
-                        
-                            <a href="/tags/The-Little-Prince/">
-                                <span class="chip bg-color">The Little Prince</span>
+                            <a href="/tags/Angular8/">
+                                <span class="chip bg-color">Angular8</span>
                             </a>
                         
                     </div>
@@ -460,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-10-02
+                    2020-04-29
                 </div>
                 
 
@@ -469,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    4 Min
                 </div>
                 
 
@@ -494,7 +490,75 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>本章节讲解 ngIf 指令</p>
+<h2 id="ngIf-指令"><a href="#ngIf-指令" class="headerlink" title="*ngIf 指令"></a>*ngIf 指令</h2><p><strong>用法一</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div *ngIf="条件表达式"&gt;
+在条件为真的时候需要显示的内容
+&lt;/div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用法二</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div *ngIf="条件表达式 else elseContent"&gt;
+在条件为真的时候需要显示的内容
+&lt;/div&gt;
+&lt;ng-template #elseContent&gt;
+在条件为假的时候需要显示的内容
+&lt;/ng-template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>用法三</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;div *ngIf="条件表达式；then thenTemplate; else elseTemplate"&gt;
+&lt;/div&gt;
+&lt;ng-template #thenTemplate&gt;
+在条件为真的时候需要显示的内容
+&lt;/ng-template&gt;
+&lt;ng-template #elseTemplate&gt;
+在条件为假的时候需要显示的内容
+&lt;/ng-template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>用法三实际上是ngIf内部执行时的样子，代码书写时大部分情况下按用法一、二的方式使用</p>
+<p>我们来看一下pinduoduo移动端页面，点击导航栏时，每个选中的选项下面是有一个下划线出现的，如下图：<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-11-ngIf/1.png" alt="pinduoduo"></p>
+<h2 id="组件的输入和输出"><a href="#组件的输入和输出" class="headerlink" title="组件的输入和输出"></a>组件的输入和输出</h2><p><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-11-ngIf/2.png" alt="image.png"><br>先从之前的代码上来理解一下何为父组件？何为子组件？</p>
+<p>以app.component 和 scrollable-tab.component 为例。<br>父组件为app.component<br>子组件为scrollable-tab.component.<br>app.component.html<br><code>&lt;app-scrollable-tab&gt;&lt;/app-scrollable-tab&gt;</code><br>scrollable-tab 组件在根组件模板中被根组件使用，那么scrollable-tab 就是根组件的子组件，根组件即为父组件。在任何一个组件中，组件的调用方都是父组件，被调用组件为子组件。</p>
+<p>接下来我们看一下关于封装的子组件scrollable-tab.component, 有哪些输入输出属性可以定义。<br>比如目前有一个非常大的问题就是我们把topMenus直接定义在了子组件scrollable-tab.component中了，如果我想重用这个子组件而且显示不同的内容，那么目前这样的封装方法是不可能重用这个子组件的。我们想要达到的效果是我可以在任何地方使用这个子组件，而且能根据我想要显示的内容来显示。这就要求我们必须在调用子组件的父组件中给子组件定义显示内容，而不是直接在子组件中直接写死显示内容。</p>
+<p>在Angular中有两个装饰器来处理类似情况：<code>@Input</code>，<code>@Output</code>。专门用来实现跨组件通讯，双向绑定等操作所用的。</p>
+<p>比如，我们在scrollable-tab.component中给topMenus添加<code>@Input </code> 装饰器，这就代表这个topMenus属性的值由外部输入进来的。</p>
+<pre class="line-numbers language-none"><code class="language-none">@Input() menus: TopBars[] = [];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>把menus中的具体值定义在父组件中，并且以属性的形式在调用时给子组件赋值<br><code>&lt;app-scrollable-tab [menus]="topBars"&gt;&lt;/app-scrollable-tab&gt;</code></p>
+<p>所以，当其它组件也有类似的菜单需要展示，那么就可以以同样的方式调用scrollable-tab子组件并且赋予其不同的显示类容。</p>
+<p>另外，我们点击顶部菜单时，其实是要切换到不同页面去的。那么切换页面这个动作是子组件自己做好还是让其调用的父组件来做好呢？<br>当然是调用者来做比较合适，对于子组件来说，只知道要显示顶部菜单，但它并不知道父组件要导航到哪里去。也许每个调用者对导航的定义都不同，所以子组件不可能将这个行为封装在自己的组件中。但是，子组件知道目前点击了哪个菜单，对于子组件来说需要让父组件知道目前点了哪个菜单。</p>
+<p>在子组件中定义一个函数handleSelection处理子组件中的选择事件,把选中的item作为参数，如下：<br><em>.html</em></p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of menus; let i=index"&gt;
+    &lt;a href="#" [class.active]="selectedIndex === i" (click)="hanleSelection(i)"&gt;{{item.title}}&lt;/a&gt;
+    &lt;span class="indicator" *ngIf="selectedIndex === i"&gt;&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>.ts</em></p>
+<pre class="line-numbers language-none"><code class="language-none">export class ScrollableTabComponent implements OnInit {
+
+  selectedIndex = -1;
+  constructor() { }
+
+  @Input() menus: TopBars[] = [];
+  @Output() tabSelected = new EventEmitter();
+
+  ngOnInit() {
+  }
+
+  hanleSelection(index: number) {
+    this.selectedIndex = index;
+    this.tabSelected.emit(this.menus[this.selectedIndex]);
+  }
+
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-EventEmitter```是事件发射器，先定义Output。然后在```hanleSelection```方法中把目前选中的tab放到事件发射器中，这样就可以把选中的菜单传递给父组件。目前我们只在父组件中打印出选中的菜单，后续会讲到详细处理方法。" data-language="EventEmitter```是事件发射器，先定义Output。然后在```hanleSelection```方法中把目前选中的tab放到事件发射器中，这样就可以把选中的菜单传递给父组件。目前我们只在父组件中打印出选中的菜单，后续会讲到详细处理方法。"><code class="language-EventEmitter```是事件发射器，先定义Output。然后在```hanleSelection```方法中把目前选中的tab放到事件发射器中，这样就可以把选中的菜单传递给父组件。目前我们只在父组件中打印出选中的菜单，后续会讲到详细处理方法。">
+*父组件中的适用*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>&lt;app-scrollable-tab [menus]=”topBars” (tabSelected)=”handleTabSelected($event)”&gt;</p>
+<pre class="line-numbers language-none"><code class="language-none">```
+ handleTabSelected(tabMenu: TopBars) {
+    console.log(tabMenu);
+  }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行看一下效果<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-11-ngIf/3.gif" alt="11-1.gif"></p>
+
                 
             </div>
             <hr/>
@@ -520,7 +584,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/">http://example.com/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</a>
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-11-ngIf/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-11-ngIf/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -558,16 +622,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Book/">
-                                    <span class="chip bg-color">Book</span>
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
                                 </a>
                             
-                                <a href="/tags/English/">
-                                    <span class="chip bg-color">English</span>
-                                </a>
-                            
-                                <a href="/tags/The-Little-Prince/">
-                                    <span class="chip bg-color">The Little Prince</span>
+                                <a href="/tags/Angular8/">
+                                    <span class="chip bg-color">Angular8</span>
                                 </a>
                             
                         </div>
@@ -741,13 +801,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/">
+                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
                         
-                        <span class="card-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</span>
+                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,7 +818,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                         </span>
                         <span class="publish-author">
                             
@@ -771,16 +831,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Book/">
-                        <span class="chip bg-color">Book</span>
-                    </a>
-                    
-                    <a href="/tags/English/">
-                        <span class="chip bg-color">English</span>
-                    </a>
-                    
-                    <a href="/tags/The-Little-Prince/">
-                        <span class="chip bg-color">The Little Prince</span>
+                    <a href="/tags/Node-RED/">
+                        <span class="chip bg-color">Node-RED</span>
                     </a>
                     
                 </div>
@@ -794,13 +846,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/02/Books/English/Animal%20Farm/Chapter1/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-10-Component%20Encapsulating/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Chapter1">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Angular8 实战（十）【组件封装】分离封装第一个组件">
                         
-                        <span class="card-title">Chapter1</span>
+                        <span class="card-title">Angular8 实战（十）【组件封装】分离封装第一个组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -811,7 +863,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                             </span>
                         <span class="publish-author">
                             
@@ -824,16 +876,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Book/">
-                        <span class="chip bg-color">Book</span>
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
                     </a>
                     
-                    <a href="/tags/English/">
-                        <span class="chip bg-color">English</span>
-                    </a>
-                    
-                    <a href="/tags/Animal-Farm/">
-                        <span class="chip bg-color">Animal Farm</span>
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
                     </a>
                     
                 </div>
