@@ -289,6 +289,48 @@
     
     
     <entry>
+      <title>Angular8 实战（十三）组件生命周期（1）</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-13-Life%20Cycle%201/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-13-Life%20Cycle%201/</url>
+      
+        <content type="html"><![CDATA[<p>本章讲解组件的生命周期</p><p>Angular 提供了一系列关于生命周期的钩子函数（constructor不属于生命周期的钩子函数）。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-13-Life%20Cycle%201/1.png" alt="13-1"></p><p>图中描述了每个函数在什么时候被调用，那么接下来我们来在代码中示例一下每个函数的用法。<br>以Scrollable-tab组件为例，在创建组件时，angular会默认创建并实现了两个函数 <code>constructor</code> 和 <code>ngOnInit</code>。</p><h2 id="ngOnInit-amp-constructor"><a href="#ngOnInit-amp-constructor" class="headerlink" title="ngOnInit &amp; constructor"></a>ngOnInit &amp; constructor</h2><pre class="line-numbers language-none"><code class="language-none">export class ScrollableTabComponent implements OnInit {  constructor() { }  ngOnInit() {  }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>如下，我们分别在ngOnInit和constructor中分别输出当前函数，执行看一下调用顺序。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-13-Life%20Cycle%201/2.gif" alt="13-2.gif"><br>另外，</p><blockquote><p>接口是可选的，也就是说只要有类似ngOnInit这样的方法存在，生命周期的钩子函数还是正常执行<br>但是建议实现接口，好处一个是不会由于误删除某个钩子函数；另一个是对组件涉及到哪些生命周期一目了然<br>构造函数总是会第一个被调用<br>ngOnInit()：组件初始化完成，在这个函数中，可以安全使用组件的属性和方法。构造函数中可能出现未初始化完成的情况。</p></blockquote><h2 id="ngOnChanges"><a href="#ngOnChanges" class="headerlink" title="ngOnChanges"></a>ngOnChanges</h2><p>ngOnChanges在生命周期图中是在ngOnInit之前，此函数有一个默认参数<code>SimpleChanges</code>，接下来我们打印这个参数看一下<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-13-Life%20Cycle%201/3.gif" alt="13-3.gif"></p><p>从示例中可以看出，输入属性是一个字典型的对象。这个字典的每一个key值就是输入的参数名。下一层同样是字典型参数，可以看出“当前值”，“前一个值”，“是否第一次改变”。所有改变的输入属性都会列在这个<code>SimpleChanges</code>中。</p><p>为了让大家更清楚ngOnChanges函数，我们在父组件中改变值来看一下。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-13-Life%20Cycle%201/4.gif" alt="13-4.gif"></p><p>从示例中可以看出ngOnchanges这个钩子函数可以被调用多次，只是组件第一次加载的时候是在ngOnInit之前的。ngOnInit这个钩子函数在组件的生命周期中只装载一次，但是ngOnChanges可以是多次的。</p><h2 id="ngDoCheck"><a href="#ngDoCheck" class="headerlink" title="ngDoCheck"></a>ngDoCheck</h2><p>ngDoCheck主要是Angular框架来做脏值检测的，此篇一带而过后面会详细讲解。简单理解这个和ngOnChanges有一点类似。ngOnChanges是只监听组件本身的变化，是主动接收输入属性的变化情况。ngDoCheck是Angular对整个框架的监听，而此时scrollable-tab组件有值变化所以DoCheck事件在此组件中装载。同样这个事件也是多次装载的。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-13-Life%20Cycle%201/5.gif" alt="13-5.gif"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Angular8 实战（十二）样式绑定的几种方式</title>
+      <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-12-ngStyle%20and%20ngClass/"/>
+      <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-12-ngStyle%20and%20ngClass/</url>
+      
+        <content type="html"><![CDATA[<p>Angular 样式绑定的几种方式：</p><p>方式一：<br>class.className 对于单个样式的条件绑定最为合适<br><code>&lt;div [class.className]="条件表达式"&gt;...&lt;/div&gt;</code></p><p>方式二：<br>ngClass 是自由度和扩展性最强的样式绑定方式<br><code>&lt;div [ngClass]="{'One': true, 'Two': true, 'Three': false}"&gt;...&lt;/div&gt;</code></p><p>方式三：<br>ngStyle由于是嵌入式样式，它会覆盖掉其它样式，使用时要谨慎<br><code>&lt;div [ngStyle]="{'color': someColor, 'font-size': fontSize}"&gt;...&lt;/div&gt;</code></p><p>本章我们讲解一下，如何把子组件中的样式绑定定义成输入、输出格式。<br>举个简单的例子，如果遇到一个节假日，可能想换一下菜单的字体、背景色等等，这种情况显然不能直接将样式直接封装在子组件中，由父组件来指定样式会更灵活。</p><h2 id="ngStyle"><a href="#ngStyle" class="headerlink" title="ngStyle"></a>ngStyle</h2><p>我们先来改变子组件中<code>ul</code>标签的背景色，如下：<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-12-ngStyle%20and%20ngClass/1.gif" alt="12-1.gif"></p><p>下面我们来改变子组件中菜单选中和未选中的字体颜色，如下：<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-12-ngStyle%20and%20ngClass/2.gif" alt="12-2.gif"></p><p>对于子组件中的其它标签都可以按照此方式修改。</p><h2 id="ngClass"><a href="#ngClass" class="headerlink" title="ngClass"></a>ngClass</h2><p>ngClass对于这个子组件来说并不是特别合适，因为子组件中的样式其实是需要动态改变某一个CSS属性。这边只是演示一下怎么用，后面还会涉及到。<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-12-ngStyle%20and%20ngClass/3.gif" alt="12-3.gif"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Frontend </tag>
+            
+            <tag> Angular8 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Angular8 实战（十一）【ngIf 指令 组件的输入输出】组件的输入和输出属性</title>
       <link href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-11-ngIf/"/>
       <url>/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-11-ngIf/</url>
