@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups, Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（九）【ngFor指令 事件的处理和样式绑定】顶部导航支持选中状态, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups | Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（九）【ngFor指令 事件的处理和样式绑定】顶部导航支持选中状态 | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</h1>
+                    <h1 class="description center-align post-title">Angular8 实战（九）【ngFor指令 事件的处理和样式绑定】顶部导航支持选中状态</h1>
                 </div>
             </div>
         </div>
@@ -436,16 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Book/">
-                                <span class="chip bg-color">Book</span>
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
                             </a>
                         
-                            <a href="/tags/English/">
-                                <span class="chip bg-color">English</span>
-                            </a>
-                        
-                            <a href="/tags/The-Little-Prince/">
-                                <span class="chip bg-color">The Little Prince</span>
+                            <a href="/tags/Angular8/">
+                                <span class="chip bg-color">Angular8</span>
                             </a>
                         
                     </div>
@@ -460,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-10-02
+                    2020-04-29
                 </div>
                 
 
@@ -469,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    698
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -494,7 +490,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>在第七章中我们使用到了ngFor（如下），本章先来详细讲一下指令-ngFor。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of topBars"&gt;{{item}}&lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="ngFor变量的应用范围"><a href="#ngFor变量的应用范围" class="headerlink" title="ngFor变量的应用范围"></a>ngFor变量的应用范围</h2><p>ngFor变量的应用范围是在html标签的闭合范围之内，包含标签本身。<br>用上面的代码举个例子，在<code>&lt;li&gt;&lt;/li&gt;</code>之间，ngFor的变量都可使用，即使<code>&lt;li&gt;&lt;/li&gt;</code>还嵌套了其他标签元素也同样可以使用ngFor的变量。但是<code>&lt;li&gt;&lt;/li&gt;</code>之外的都不在有效使用范围了。</p>
+<h2 id="ngFor索引的获取"><a href="#ngFor索引的获取" class="headerlink" title="ngFor索引的获取"></a>ngFor索引的获取</h2><p>如下，如果想知道当前值的索引值，可以通过设置<code> let i=index</code>来获取，把index赋值给另一个变量i，i的使用范围和ngFor的使用范围相同</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of topBars; let i=index"&gt;
+    &lt;a href="#"&gt;{{item}}&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="ngFor第一个和最后一个"><a href="#ngFor第一个和最后一个" class="headerlink" title="ngFor第一个和最后一个"></a>ngFor第一个和最后一个</h2><p>如下，如果想获取第一个元素和最后一个元素，那么可以通过设置<code>let firstItem=first; let lastItem=last</code>， first，last代表是否是第一个元素，是否是最后一个元素，都是boolean类型</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of topBars; let firstItem=first; let lastItem=last"&gt;
+    &lt;a href="#"&gt;{{item}}&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="ngFor-奇和偶"><a href="#ngFor-奇和偶" class="headerlink" title="ngFor 奇和偶"></a>ngFor 奇和偶</h2><p>如下, 如果想获取第奇个元素或第偶个元素，那么可以通过设置<code>let odd=odd; let even=even</code>。理论上来讲，有索引的话，获取奇偶可以自行处理。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of topBars; let odd=odd; let even=even"&gt;
+    &lt;a href="#"&gt;{{item}}&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="事件的处理和样式绑定"><a href="#事件的处理和样式绑定" class="headerlink" title="事件的处理和样式绑定"></a>事件的处理和样式绑定</h2><p>如下，样式的动态绑定，比如对于导航栏，点击某一项时希望是有样式的能和未选中的项区分开来</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of topBars; let i=index"&gt;
+    &lt;a href="#" [class.active]="selectedIndex === i" (click)="selectedIndex = i"&gt;{{item}}&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>[class.样式类名]=“判断表达式” 是在应用单个class时的常用技巧。其中样式类名是定义在css文件中用于详细样式的绑定</li>
+<li>使用方括号<code>[]</code> 是数据绑定， 如果带方括号，等号后面就是一个对象或表达式</li>
+<li>不使用方括号，等号后面Angular 认为是一个字符串，但如果我们此时在等号后面使用<code>{{}}</code>就是和方括号等效的</li>
+<li>圆括号<code>()</code> 用于事件绑定，等号后可以接表达式也可以是一个定义在类中的函数</li>
+</ul>
+<p>.css file</p>
+<pre class="line-numbers language-none"><code class="language-none">.active {
+  color: red;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>效果如下：<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-9-ngFor/1.gif" alt="1.gif"></p>
+<p>总结一下，*ngFor不仅可以循环展示变量数组值还可以自由获取某一个变量值</p>
+
                 
             </div>
             <hr/>
@@ -520,7 +558,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/">http://example.com/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</a>
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-9-ngFor/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-9-ngFor/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -558,16 +596,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Book/">
-                                    <span class="chip bg-color">Book</span>
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
                                 </a>
                             
-                                <a href="/tags/English/">
-                                    <span class="chip bg-color">English</span>
-                                </a>
-                            
-                                <a href="/tags/The-Little-Prince/">
-                                    <span class="chip bg-color">The Little Prince</span>
+                                <a href="/tags/Angular8/">
+                                    <span class="chip bg-color">Angular8</span>
                                 </a>
                             
                         </div>
@@ -741,13 +775,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/10/02/test/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-10-Component%20Encapsulating/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Angular8 实战（十）【组件封装】分离封装第一个组件">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">Angular8 实战（十）【组件封装】分离封装第一个组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,7 +792,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                         </span>
                         <span class="publish-author">
                             
@@ -767,6 +801,18 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
+                    </a>
+                    
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -778,13 +824,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-8-Interface/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups">
+                        <img src="/medias/featureimages/25.jpg" class="responsive-img" alt="Angular8 实战（八）【接口Interface Flex布局】让顶部导航滚动">
                         
-                        <span class="card-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</span>
+                        <span class="card-title">Angular8 实战（八）【接口Interface Flex布局】让顶部导航滚动</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -795,7 +841,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                             </span>
                         <span class="publish-author">
                             
@@ -808,16 +854,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Book/">
-                        <span class="chip bg-color">Book</span>
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
                     </a>
                     
-                    <a href="/tags/English/">
-                        <span class="chip bg-color">English</span>
-                    </a>
-                    
-                    <a href="/tags/The-Little-Prince/">
-                        <span class="chip bg-color">The Little Prince</span>
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
                     </a>
                     
                 </div>

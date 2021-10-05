@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups, Cecilia Lu&#39;s Blog">
+    <meta name="keywords" content="Angular8 实战（十）【组件封装】分离封装第一个组件, Cecilia Lu&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups | Cecilia Lu&#39;s Blog</title>
+    <title>Angular8 实战（十）【组件封装】分离封装第一个组件 | Cecilia Lu&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,12 +315,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</h1>
+                    <h1 class="description center-align post-title">Angular8 实战（十）【组件封装】分离封装第一个组件</h1>
                 </div>
             </div>
         </div>
@@ -436,16 +436,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Book/">
-                                <span class="chip bg-color">Book</span>
+                            <a href="/tags/Frontend/">
+                                <span class="chip bg-color">Frontend</span>
                             </a>
                         
-                            <a href="/tags/English/">
-                                <span class="chip bg-color">English</span>
-                            </a>
-                        
-                            <a href="/tags/The-Little-Prince/">
-                                <span class="chip bg-color">The Little Prince</span>
+                            <a href="/tags/Angular8/">
+                                <span class="chip bg-color">Angular8</span>
                             </a>
                         
                     </div>
@@ -460,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-10-02
+                    2020-04-29
                 </div>
                 
 
@@ -469,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    0
+                    575
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -494,7 +490,73 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>本章主要讲解如何封装组件</p>
+<h2 id="组件封装的意义"><a href="#组件封装的意义" class="headerlink" title="组件封装的意义"></a>组件封装的意义</h2><ul>
+<li>组件重用</li>
+<li>简化逻辑</li>
+</ul>
+<p>对于之前的代码，我们都直接写在了根组件中，但是我们目前只写了导航栏部分，还不包含页面上的其它部分，如商品列表、底部菜单栏等，理论上来说，所有组件都可以写在根组件中。但是，不仅根组件负荷大，也不利于代码的维护。如果是多人合作的项目，更不建议这样做。</p>
+<p>对于一个组件来说可以被一个工程中的不同模块使用，甚至可以被不同工程重用，一定程度上减少了代码重复编写和维护的工作量。</p>
+<p>同样，当以组件形式提供给其它模块或者工程使用时，使用者无须考虑组件如何被实现，只需组件功能是否满足使用条件</p>
+<h2 id="组件封装方法"><a href="#组件封装方法" class="headerlink" title="组件封装方法"></a>组件封装方法</h2><ul>
+<li>创建新组件<br><code>ng generate component 组件名 </code> 或者 <code>ng g c 组件名</code></li>
+</ul>
+<p><em>总体命名规则：</em><br>坚持所有符号使用一致的命名规则，坚持遵循同一个模式来描述符号的特性和类型，推荐的模式为 feature.type.ts</p>
+<ul>
+<li>使用index.ts 方便导入以及隔离内部变化对外部的影响</li>
+</ul>
+<p>每一级目录中都使用index.ts文件，用来导出当前目录中可供使用的组件、服务等等。后续使用的时候只需指定到目录，而无需指定到具体文件名</p>
+<p>根据这章内容，新建导航栏组件并使用，代码改造过程如下：</p>
+<ol>
+<li><p>新建ScrollableTab 组件，并在components和scrollable-tab文件夹下分别建index.ts 文件<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-10-Component%20Encapsulating/1.png" alt="image.png"></p>
+</li>
+<li><p>scrollable-tab/index.ts<br><code>export * from './scrollable-tab.component';</code></p>
+</li>
+<li><p>components/index.ts<br><code>export * from './scrollable-tab';</code></p>
+</li>
+<li><p>scrollable-tab.component.html</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;ul&gt;
+  &lt;li *ngFor="let item of topBars; let i=index"&gt;
+    &lt;a href="#" [class.active]="selectedIndex === i" (click)="selectedIndex = i"&gt;{{item}}&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>scrollable-tab.component.ts</p>
+<pre class="line-numbers language-none"><code class="language-none">public topBars = ['热门', '女装', '男装', '鞋包', '家装', '汽车', '美食', '儿童', '母婴'];
+  constructor() { }
+
+  ngOnInit() {
+  }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>scrollable-tab.component.css</p>
+<pre class="line-numbers language-none"><code class="language-none">ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.active {
+  color: red;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>app.component.html<br><code>&lt;app-scrollable-tab&gt;&lt;/app-scrollable-tab&gt;</code></p>
+</li>
+<li><p>app.component.ts</p>
+<pre class="line-numbers language-none"><code class="language-none">export class AppComponent {
+  title = 'pinduoduo';
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>app.module.ts</p>
+<pre class="line-numbers language-none"><code class="language-none">import { ScrollableTabComponent } from './components';
+
+ declarations: [
+    AppComponent,
+    ScrollableTabComponent
+  ],<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>保存，运行<br><img src="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-10-Component%20Encapsulating/2.gif" alt="2.gif"></p>
+</li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -520,7 +582,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/">http://example.com/2021/10/02/Books/English/The%20Little%20Prince/Chapter2/</a>
+                    <a href="http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-10-Component%20Encapsulating/">http://example.com/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-10-Component%20Encapsulating/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -558,16 +620,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Book/">
-                                    <span class="chip bg-color">Book</span>
+                                <a href="/tags/Frontend/">
+                                    <span class="chip bg-color">Frontend</span>
                                 </a>
                             
-                                <a href="/tags/English/">
-                                    <span class="chip bg-color">English</span>
-                                </a>
-                            
-                                <a href="/tags/The-Little-Prince/">
-                                    <span class="chip bg-color">The Little Prince</span>
+                                <a href="/tags/Angular8/">
+                                    <span class="chip bg-color">Angular8</span>
                                 </a>
                             
                         </div>
@@ -741,13 +799,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/10/02/test/">
+                <a href="/2020/04/29/Node-RED/Node-RED-2-Creating-your-first-flow/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Node-RED 系列（2）-- Creating your first flow">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">Node-RED 系列（2）-- Creating your first flow</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,7 +816,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                         </span>
                         <span class="publish-author">
                             
@@ -767,6 +825,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Node-RED/">
+                        <span class="chip bg-color">Node-RED</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -778,13 +844,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/02/Books/English/The%20Little%20Prince/Chapter1/">
+                <a href="/2020/04/29/Angular/Angular8%20Tutorial/Angular8%20Tutorial-9-ngFor/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Angular8 实战（九）【ngFor指令 事件的处理和样式绑定】顶部导航支持选中状态">
                         
-                        <span class="card-title">Chapter1 We are introduced to the narrotor, a pilot, and his ideas about grown-ups</span>
+                        <span class="card-title">Angular8 实战（九）【ngFor指令 事件的处理和样式绑定】顶部导航支持选中状态</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -795,7 +861,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                             </span>
                         <span class="publish-author">
                             
@@ -808,16 +874,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Book/">
-                        <span class="chip bg-color">Book</span>
+                    <a href="/tags/Frontend/">
+                        <span class="chip bg-color">Frontend</span>
                     </a>
                     
-                    <a href="/tags/English/">
-                        <span class="chip bg-color">English</span>
-                    </a>
-                    
-                    <a href="/tags/The-Little-Prince/">
-                        <span class="chip bg-color">The Little Prince</span>
+                    <a href="/tags/Angular8/">
+                        <span class="chip bg-color">Angular8</span>
                     </a>
                     
                 </div>
